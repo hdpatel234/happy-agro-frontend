@@ -2,10 +2,15 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Bell, Globe, ChevronDown, Clock, Building2, Settings, List, LogOut } from 'lucide-react';
+import { Bell, Globe, ChevronDown, Clock, Building2, Settings, List, LogOut, Menu } from 'lucide-react';
 import './Header.css';
 
-export default function Header() {
+interface HeaderProps {
+  toggleSidebar?: () => void;
+  isMobile?: boolean;
+}
+
+export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   
@@ -79,9 +84,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-left">
-        {pathname === '/inventory/stock-overview' && (
-          <div className="header-hamburger">☰</div>
-        )}
+        <button className="header-hamburger" onClick={toggleSidebar}>
+          <Menu size={20} />
+        </button>
         <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>{getPageTitle()}</h2>
         
         {pathname === '/inventory/stock-overview' && (

@@ -124,3 +124,60 @@
 .nav-item:hover svg, .nav-item.active svg {
   opacity: 1;
 }
+
+/* Minimized State */
+.sidebar {
+  transition: width var(--transition-normal), transform var(--transition-normal);
+}
+
+.sidebar.minimized {
+  width: 76px;
+}
+
+.sidebar.minimized .logo-text,
+.sidebar.minimized .nav-section h3,
+.sidebar.minimized .nav-item span:not(.sidebar-text-icon) {
+  display: none;
+}
+
+.sidebar.minimized .sidebar-header {
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.sidebar.minimized .nav-item {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.minimized .nav-item svg {
+  margin: 0;
+}
+
+/* Mobile responsive */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .sidebar.mobile {
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+  }
+  
+  .sidebar.mobile.minimized {
+    transform: translateX(-100%);
+    width: 260px; /* Keep full width when sliding out on mobile */
+  }
+
+  .sidebar.mobile:not(.minimized) {
+    transform: translateX(0);
+  }
+}

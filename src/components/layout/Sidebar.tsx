@@ -13,7 +13,13 @@ import {
 } from 'lucide-react';
 import './Sidebar.css';
 
-export default function Sidebar() {
+interface SidebarProps {
+  isMinimized?: boolean;
+  toggleSidebar?: () => void;
+  isMobile?: boolean;
+}
+
+export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: SidebarProps) {
   const pathname = usePathname();
 
   const getNavClass = (path: string) => {
@@ -30,8 +36,15 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-header">
+    <>
+      {isMobile && !isMinimized && (
+        <div 
+          className="sidebar-overlay" 
+          onClick={toggleSidebar}
+        />
+      )}
+      <aside className={`sidebar ${isMinimized ? 'minimized' : ''} ${isMobile ? 'mobile' : ''}`}>
+        <div className="sidebar-header">
         <div className="logo-icon">HA</div>
         <div className="logo-text">
           <h1>Happy Agro</h1>
@@ -153,5 +166,6 @@ export default function Sidebar() {
         </div>
       </nav>
     </aside>
+    </>
   );
 }
