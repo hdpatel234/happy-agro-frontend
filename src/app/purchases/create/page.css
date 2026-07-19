@@ -1,0 +1,242 @@
+.cp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cp-back-link {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.cp-back-link:hover {
+  text-decoration: underline;
+}
+
+.cp-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cp-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+/* Grids */
+.cp-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cp-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Form Groups */
+.cp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cp-supplier-row {
+  display: flex;
+  gap: 8px;
+}
+
+.cp-input,
+.cp-select,
+.cp-textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  color: var(--text-primary);
+  background-color: white;
+}
+
+.cp-input:focus,
+.cp-select:focus,
+.cp-textarea:focus {
+  border-color: var(--accent-green);
+}
+
+.cp-textarea {
+  resize: vertical;
+}
+
+.cp-new-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+.btn-blue {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-blue:hover {
+  background-color: #1d4ed8;
+}
+
+/* Utilities */
+.text-red { color: #ef4444; }
+.mt-16 { margin-top: 16px; }
+
+/* Section Headers */
+.cp-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.cp-section-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.cp-section-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cp-add-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+}
+
+/* Purchase Item Block */
+.cp-item-block {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cp-item-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cp-item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.cp-item-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.cp-remove-text-btn {
+  color: #ef4444;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cp-remove-text-btn:hover {
+  text-decoration: underline;
+}
+
+.cp-item-body {
+  padding: 24px;
+  background-color: #f8fafc; /* Very light gray to distinguish item area */
+}
+
+/* Dividers */
+.cp-divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 16px 0;
+}
+
+/* Grand Total Box */
+.cp-grand-total-box {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+}
+
+/* Payment Section */
+.cp-payment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Actions */
+.cp-footer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cp-action-btn {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+.cp-btn-gray {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+  border: none;
+}
+
+.cp-btn-gray:hover {
+  background-color: #cbd5e1;
+}

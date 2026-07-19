@@ -1,0 +1,139 @@
+.batch-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bs-title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.bs-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.bs-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.bs-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+/* Search Card */
+.bs-search-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bs-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.bs-search-input:focus {
+  border-color: var(--accent-green);
+}
+
+.bs-search-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Table container */
+.bs-table-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.bs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bs-table th,
+.bs-table td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.bs-table th {
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.bs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bs-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.text-primary { color: var(--text-primary); }
+
+/* Badges */
+.badge-healthy {
+  background-color: #dcfce7;
+  color: #16a34a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+}

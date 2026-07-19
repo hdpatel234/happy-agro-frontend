@@ -1,0 +1,365 @@
+.cd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+/* Top Header */
+.cd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cd-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cd-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cd-header-icon {
+  font-size: 1.25rem;
+}
+
+.cd-edit-btn {
+  background-color: #16a34a; /* Green */
+  color: white;
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+}
+
+.cd-edit-btn:hover {
+  background-color: #15803d;
+}
+
+/* Grids */
+.cd-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Info Cards Row */
+.cd-info-card {
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cd-info-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cd-info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Colors for Info Cards */
+.bg-blue { background-color: #eff6ff; }
+.text-blue { color: #3b82f6; }
+
+.bg-purple { background-color: #faf5ff; }
+.text-purple { color: #a855f7; }
+
+.bg-orange { background-color: #fff7ed; }
+.text-orange { color: #f97316; }
+
+.bg-green { background-color: #f0fdf4; }
+.text-green { color: #22c55e; }
+
+/* Current Balance Card */
+.cd-balance-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-left: 6px solid #22c55e; /* Thick green border */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cd-balance-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1;
+}
+
+.cd-balance-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cd-balance-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #22c55e;
+}
+
+.cd-balance-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cd-pin-icon {
+  color: #ef4444; /* Red pin */
+}
+
+.cd-balance-watermark {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8rem;
+  color: #f1f5f9;
+  font-weight: 800;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Financial Metrics Row */
+.cd-metric-card {
+  border: 1px solid;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cd-metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cd-metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+/* Backgrounds & Borders for Metrics */
+.bg-light-blue { background-color: #eff6ff; }
+.border-blue { border-color: #bfdbfe; }
+
+.bg-light-green { background-color: #f0fdf4; }
+.border-green { border-color: #bbf7d0; }
+
+.bg-light-red { background-color: #fef2f2; }
+.border-red { border-color: #fecaca; }
+.text-red { color: #ef4444; }
+
+.bg-light-purple { background-color: #faf5ff; }
+.border-purple { border-color: #e9d5ff; }
+
+/* Transaction History Section */
+.cd-transactions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cd-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cd-section-icon {
+  color: #f59e0b;
+}
+
+.cd-total-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Filter Card */
+.cd-filter-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cd-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cd-form-group label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.cd-input {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  outline: none;
+  width: 100%;
+}
+
+.cd-input:focus {
+  border-color: var(--accent-green);
+}
+
+.cd-filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cd-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.cd-filter-dot {
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cd-reset-btn {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.cd-reset-btn:hover {
+  background-color: #cbd5e1;
+}
+
+/* Transaction List */
+.cd-transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cd-transaction-item {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cd-tx-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd-tx-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cd-tx-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cd-tx-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cd-badge-gray {
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cd-tx-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cd-tx-amount {
+  font-size: 1.1rem;
+}
+
+.cd-tx-subrow {
+  background-color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.cd-tx-ref {
+  color: var(--text-secondary);
+}
+
+.cd-ref-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.cd-ref-link:hover {
+  text-decoration: underline;
+}
+
+/* Utility */
+.fw-bold { font-weight: 700; }

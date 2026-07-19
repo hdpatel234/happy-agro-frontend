@@ -1,0 +1,172 @@
+.sd-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.sd-back-link {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-bottom: 16px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.sd-back-link:hover {
+  text-decoration: underline;
+}
+
+.sd-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 900px; /* Slightly wider than standard form */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header Banner */
+.sd-header-banner {
+  background-color: #0f9d58; /* vibrant green from screenshot */
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.sd-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sd-header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.sd-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.sd-email {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+}
+
+.sd-badge-active {
+  background-color: #00e676; /* Bright green badge */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Details Content */
+.sd-content {
+  padding: 32px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.sd-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sd-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.sd-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sd-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sd-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.sd-role-badge {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  padding: 4px 16px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  align-self: flex-start; /* don't stretch */
+}
+
+.mt-32 { margin-top: 32px; }
+
+/* Footer Actions */
+.sd-footer {
+  padding: 0 48px 32px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sd-action-btn {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-green {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+}
+
+.btn-green:hover {
+  background-color: #15803d;
+}
+
+.sd-btn-gray {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+  border: none;
+}
+
+.sd-btn-gray:hover {
+  background-color: #cbd5e1;
+}

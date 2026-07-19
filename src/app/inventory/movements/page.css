@@ -1,0 +1,149 @@
+.movements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.movements-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sm-title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sm-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.sm-back-link {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sm-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Filter Bar */
+.sm-filter-bar {
+  display: flex;
+  gap: 12px;
+  background-color: var(--card-bg);
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+}
+
+.sm-select {
+  padding: 10px 32px 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+  background-color: white;
+  min-width: 150px;
+}
+
+.sm-date-input {
+  padding: 9px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+  background-color: white;
+  color: var(--text-primary);
+  /* Make sure calendar icon space is accommodated */
+}
+
+.sm-date-input:focus,
+.sm-select:focus {
+  border-color: var(--accent-green);
+}
+
+.sm-filter-btn {
+  padding: 10px 32px;
+}
+
+/* Table container */
+.sm-table-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.sm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sm-table th,
+.sm-table td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-secondary); /* default for most cells like date, reason */
+}
+
+.sm-table th {
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.sm-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sm-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.fw-600 { 
+  font-weight: 600; 
+  color: var(--text-primary); 
+}
+
+/* Badges */
+.badge-in {
+  background-color: #dcfce7;
+  color: #16a34a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.badge-out {
+  background-color: #fee2e2;
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.qty-out {
+  color: #2563eb !important;
+  font-weight: 600;
+}

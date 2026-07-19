@@ -1,0 +1,202 @@
+.brands-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brands-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.brands-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.brands-filter-bar {
+  display: flex;
+  gap: 12px;
+  background-color: var(--card-bg);
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+}
+
+.brands-search-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.brands-search-input:focus {
+  border-color: var(--accent-green);
+}
+
+.brands-status-select {
+  padding: 10px 32px 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+  background-color: white;
+  min-width: 150px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+}
+
+.clear-btn {
+  padding: 10px 24px;
+  background-color: #64748b;
+  color: white;
+  border: none;
+}
+
+.clear-btn:hover {
+  background-color: #475569;
+}
+
+.brands-table-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.brands-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.brands-table th,
+.brands-table td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.brands-table th {
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.brands-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.brands-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.fw-600 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.brand-product-pill {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.brand-badge-active {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.brand-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.brand-action-btn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.brand-action-btn:hover {
+  text-decoration: underline;
+}
+
+.brand-action-btn.edit { color: #2563eb; }
+.brand-action-btn.delete { color: #dc2626; }
+
+.brands-pagination-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.brands-pagination-info {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.brands-pagination-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.brands-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #334155;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.brands-page-btn:hover {
+  background-color: #1e293b;
+}
+
+.brands-page-btn.active {
+  background-color: #475569;
+  font-weight: 600;
+}

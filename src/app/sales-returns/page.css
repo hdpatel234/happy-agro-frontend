@@ -1,0 +1,201 @@
+.sr-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hide standard header, as this page uses a custom top card */
+.sr-header-hidden {
+  display: none;
+}
+
+/* Action Card */
+.sr-action-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sr-action-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-action-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sr-action-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.sr-open-orders-btn {
+  padding: 10px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+}
+
+/* Metrics Grid */
+.sr-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sr-metric-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sr-metric-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.sr-metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.sr-text-orange {
+  color: #f97316; /* Orange color for pending */
+}
+
+/* Filter Card */
+.sr-filter-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sr-filter-row {
+  display: flex;
+  gap: 16px;
+}
+
+.sr-input,
+.sr-select {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+  color: var(--text-primary);
+  background-color: white;
+}
+
+.sr-input:focus,
+.sr-select:focus {
+  border-color: var(--accent-green);
+}
+
+.sr-filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.sr-filter-btn {
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+.sr-clear-btn {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+.sr-clear-btn:hover {
+  background-color: #4b5563;
+}
+
+/* Table */
+.sr-table-container {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.sr-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sr-table th,
+.sr-table td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.sr-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sr-table th:first-child,
+.sr-table td:first-child {
+  text-align: left;
+}
+
+.sr-empty-cell {
+  text-align: center !important;
+  padding: 48px 24px !important;
+}
+
+.sr-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.sr-empty-state p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.sr-empty-link {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.sr-empty-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,123 @@
+.brand-create-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.bc-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.bc-back-link {
+  display: inline-block;
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.bc-back-link:hover {
+  text-decoration: underline;
+}
+
+.bc-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.bc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bc-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bc-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bc-help-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
+.bc-input,
+.bc-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--main-bg);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.bc-input:focus,
+.bc-textarea:focus {
+  border-color: var(--accent-green);
+}
+
+.bc-textarea {
+  resize: vertical;
+}
+
+.bc-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.bc-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-green);
+  cursor: pointer;
+}
+
+.bc-checkbox-label {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.bc-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.bc-submit-btn {
+  flex: 1;
+}
+
+.bc-cancel-btn {
+  flex: 1;
+  text-align: center;
+  background-color: #e2e8f0;
+  color: #475569;
+  border: none;
+}
+
+.bc-cancel-btn:hover {
+  background-color: #cbd5e1;
+}

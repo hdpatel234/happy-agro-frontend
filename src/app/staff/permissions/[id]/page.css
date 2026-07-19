@@ -1,0 +1,181 @@
+.mp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 24px;
+}
+
+.mp-back-link {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mp-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Profile Card */
+.mp-profile-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 48px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mp-profile-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.mp-profile-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mp-profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mp-profile-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.mp-profile-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+/* Split Layout */
+.mp-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Assign Roles is slightly narrower than Assign Permissions */
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mp-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 24px 0;
+}
+
+/* Roles Layout */
+.mp-roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.mp-role-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mp-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.mp-role-wrapper label {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+/* Permissions Layout */
+.mp-permissions-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-permissions-box {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background-color: #f8fafc;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.mp-box-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+}
+
+.mp-permissions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.mp-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mp-checkbox-group label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+/* Update Buttons */
+.mp-update-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+.btn-green {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+}
+
+.btn-green:hover {
+  background-color: #15803d;
+}
