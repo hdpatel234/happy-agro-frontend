@@ -152,3 +152,18 @@
 .cex-btn-gray:hover {
   background-color: #cbd5e1;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cex-card {
+    padding: 24px;
+  }
+
+  .cex-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .cex-footer-actions {
+    grid-template-columns: 1fr;
+  }
+}

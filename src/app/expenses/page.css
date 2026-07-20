@@ -266,3 +266,32 @@
 .text-red {
   color: #ef4444;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .exp-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .exp-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .exp-filter-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .exp-filter-actions {
+    width: 100%;
+  }
+}
