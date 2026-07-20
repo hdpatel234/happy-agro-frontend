@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { Users, IndianRupee, Factory, UserPlus, BookOpen, Plus } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function KhataPage() {
+  const { t } = useLanguage();
   return (
     <div className="khata-container">
       <div className="card">
@@ -12,13 +14,13 @@ export default function KhataPage() {
           <div className="khata-title-section">
             <BookOpen className="text-accent-blue" size={24} />
             <div>
-              <h2 className="khata-title">Khata Book</h2>
-              <p className="khata-subtitle">Manage customer and supplier credit transactions</p>
+              <h2 className="khata-title">{t('khata.title')}</h2>
+              <p className="khata-subtitle">{t('khata.subtitle')}</p>
             </div>
           </div>
           <Link href="/khata/create" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Plus size={18} />
-            <span>Add Entry</span>
+            <span>{t('khata.add_entry')}</span>
           </Link>
         </div>
 
@@ -26,7 +28,7 @@ export default function KhataPage() {
         <div className="khata-stats-grid">
           <div className="k-stat-card">
             <div>
-              <div className="k-stat-label">Total Parties</div>
+              <div className="k-stat-label">{t('khata.total_parties')}</div>
               <div className="k-stat-val">1</div>
             </div>
             <div className="k-stat-icon" style={{ backgroundColor: '#e0e7ff', color: '#4f46e5' }}>
@@ -36,7 +38,7 @@ export default function KhataPage() {
           
           <div className="k-stat-card">
             <div>
-              <div className="k-stat-label">Customers Due</div>
+              <div className="k-stat-label">{t('khata.customers_due')}</div>
               <div className="k-stat-val text-danger">₹0.00</div>
             </div>
             <div className="k-stat-icon" style={{ backgroundColor: '#ffedd5', color: '#ea580c' }}>
@@ -46,7 +48,7 @@ export default function KhataPage() {
 
           <div className="k-stat-card">
             <div>
-              <div className="k-stat-label">Suppliers Due</div>
+              <div className="k-stat-label">{t('khata.suppliers_due')}</div>
               <div className="k-stat-val text-danger">₹0.00</div>
             </div>
             <div className="k-stat-icon" style={{ backgroundColor: '#ffedd5', color: '#64748b' }}>
@@ -56,7 +58,7 @@ export default function KhataPage() {
 
           <div className="k-stat-card">
             <div>
-              <div className="k-stat-label">Net Balance</div>
+              <div className="k-stat-label">{t('khata.net_balance')}</div>
               <div className="k-stat-val text-success">₹0.00</div>
             </div>
             <div className="k-stat-icon" style={{ backgroundColor: '#d1fae5', color: '#059669' }}>
@@ -69,20 +71,20 @@ export default function KhataPage() {
         <div className="khata-filters">
           <input 
             type="text" 
-            placeholder="Search by name or mobile..." 
+            placeholder={t('khata.search_placeholder')} 
             className="k-filter-input" 
           />
           <select className="k-filter-select">
-            <option>All Parties</option>
-            <option>Customers</option>
-            <option>Suppliers</option>
+            <option>{t('khata.all_parties')}</option>
+            <option>{t('khata.customers')}</option>
+            <option>{t('khata.suppliers')}</option>
           </select>
           <select className="k-filter-select">
-            <option>All Parties</option>
-            <option>With Due</option>
-            <option>Settled</option>
+            <option>{t('khata.all_parties')}</option>
+            <option>{t('khata.with_due')}</option>
+            <option>{t('khata.settled')}</option>
           </select>
-          <button className="btn btn-primary" style={{ width: '120px' }}>Filter</button>
+          <button className="btn btn-primary" style={{ width: '120px' }}>{t('khata.filter')}</button>
         </div>
 
         {/* Table */}
@@ -90,13 +92,13 @@ export default function KhataPage() {
           <table className="khata-table">
             <thead>
               <tr>
-                <th>PARTY</th>
-                <th>TYPE</th>
-                <th>MOBILE</th>
-                <th>TOTAL DEBIT (DUE)</th>
-                <th>TOTAL CREDIT (PAID)</th>
-                <th>BALANCE</th>
-                <th>ACTIONS</th>
+                <th>{t('khata.table.party')}</th>
+                <th>{t('khata.table.type')}</th>
+                <th>{t('khata.table.mobile')}</th>
+                <th>{t('khata.table.total_debit')}</th>
+                <th>{t('khata.table.total_credit')}</th>
+                <th>{t('khata.table.balance')}</th>
+                <th>{t('khata.table.actions')}</th>
               </tr>
             </thead>
             <tbody>
@@ -110,14 +112,14 @@ export default function KhataPage() {
                   </div>
                 </td>
                 <td>
-                  <span className="party-badge customer">Customer</span>
+                  <span className="party-badge customer">{t('khata.customer_badge')}</span>
                 </td>
-                <td className="text-muted">N/A</td>
+                <td className="text-muted">{t('inventory.na')}</td>
                 <td className="text-danger">₹120.00</td>
                 <td className="text-success">₹120.00</td>
                 <td className="text-success font-semibold">₹0.00</td>
                 <td>
-                  <button className="btn-link">View Ledger</button>
+                  <button className="btn-link">{t('khata.view_ledger')}</button>
                 </td>
               </tr>
             </tbody>
