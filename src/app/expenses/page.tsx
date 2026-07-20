@@ -7,7 +7,7 @@ import { Modal } from '@/components/ui/Modal';
 import './page.css';
 
 export default function ExpensesPage() {
-  const [expensesList] = useState([
+  const [expensesList, setExpensesList] = useState([
     {
       id: 1,
       date: 'Jul 20, 2026',
