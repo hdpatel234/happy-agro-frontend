@@ -284,3 +284,39 @@
 .ml-1 {
   margin-left: 4px;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+  
+  .header-left h2 {
+    font-size: 1.1rem;
+  }
+  
+  .header-search-container {
+    display: none;
+  }
+  
+  .lang-selector span, 
+  .lang-selector svg:last-child {
+    display: none;
+  }
+  
+  .lang-selector {
+    padding: 6px;
+  }
+  
+  .user-profile span {
+    display: none;
+  }
+  
+  .user-profile {
+    padding: 4px;
+  }
+  
+  .header-right {
+    gap: 12px;
+  }
+}

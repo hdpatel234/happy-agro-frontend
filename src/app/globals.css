@@ -177,3 +177,10 @@ button {
   background-color: #2563eb;
   box-shadow: var(--shadow-md);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .content-scrollable {
+    padding: 16px;
+  }
+}

@@ -37,6 +37,12 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
         return pathname.startsWith(path) ? 'nav-item active' : 'nav-item';
     };
 
+    const handleLinkClick = () => {
+        if (isMobile && !isMinimized && toggleSidebar) {
+            toggleSidebar();
+        }
+    };
+
     return (
         <>
             {isMobile && !isMinimized && (
@@ -57,15 +63,15 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
                 <nav className="sidebar-nav">
                     <div className="nav-section">
                         <h3>{t('sidebar.main')}</h3>
-                        <Link href="/" className={getNavClass('/')}>
+                        <Link href="/" className={getNavClass('/')} onClick={handleLinkClick}>
                             <LayoutDashboard size={18} />
                             <span>{t('sidebar.dashboard')}</span>
                         </Link>
-                        <Link href="/pos" className={getNavClass('/pos')}>
+                        <Link href="/pos" className={getNavClass('/pos')} onClick={handleLinkClick}>
                             <Calculator size={18} />
                             <span>{t('sidebar.pos')}</span>
                         </Link>
-                        <Link href="/khata" className={getNavClass('/khata')}>
+                        <Link href="/khata" className={getNavClass('/khata')} onClick={handleLinkClick}>
                             <BookOpen size={18} />
                             <span>{t('sidebar.khata')}</span>
                         </Link>
@@ -73,19 +79,19 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     <div className="nav-section">
                         <h3>{t('sidebar.products')}</h3>
-                        <Link href="/categories" className={getNavClass('/categories')}>
+                        <Link href="/categories" className={getNavClass('/categories')} onClick={handleLinkClick}>
                             <FolderTree size={18} />
                             <span>{t('sidebar.categories')}</span>
                         </Link>
-                        <Link href="/brands" className={getNavClass('/brands')}>
+                        <Link href="/brands" className={getNavClass('/brands')} onClick={handleLinkClick}>
                             <Tag size={18} />
                             <span>{t('sidebar.brands')}</span>
                         </Link>
-                        <Link href="/products" className={getNavClass('/products')}>
+                        <Link href="/products" className={getNavClass('/products')} onClick={handleLinkClick}>
                             <Package size={18} />
                             <span>{t('sidebar.products')}</span>
                         </Link>
-                        <Link href="/inventory" className={getNavClass('/inventory')}>
+                        <Link href="/inventory" className={getNavClass('/inventory')} onClick={handleLinkClick}>
                             <Boxes size={18} />
                             <span>{t('sidebar.inventory')}</span>
                         </Link>
@@ -97,19 +103,19 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     <div className="nav-section">
                         <h3>{t('sidebar.orders_section')}</h3>
-                        <Link href="/orders" className={getNavClass('/orders')}>
+                        <Link href="/orders" className={getNavClass('/orders')} onClick={handleLinkClick}>
                             <ClipboardList size={18} />
                             <span>{t('sidebar.orders')}</span>
                         </Link>
-                        <Link href="/purchases" className={getNavClass('/purchases')}>
+                        <Link href="/purchases" className={getNavClass('/purchases')} onClick={handleLinkClick}>
                             <ShoppingCart size={18} />
                             <span>{t('sidebar.purchases')}</span>
                         </Link>
-                        <Link href="/sales-returns" className={getNavClass('/sales-returns')}>
+                        <Link href="/sales-returns" className={getNavClass('/sales-returns')} onClick={handleLinkClick}>
                             <span className="sidebar-text-icon">SR</span>
                             <span>{t('sidebar.sales_return')}</span>
                         </Link>
-                        <Link href="/purchase-returns" className={getNavClass('/purchase-returns')}>
+                        <Link href="/purchase-returns" className={getNavClass('/purchase-returns')} onClick={handleLinkClick}>
                             <span className="sidebar-text-icon">PR</span>
                             <span>{t('sidebar.purchase_return')}</span>
                         </Link>
@@ -117,19 +123,19 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     <div className="nav-section">
                         <h3>{t('sidebar.people')}</h3>
-                        <Link href="/customers" className={getNavClass('/customers')}>
+                        <Link href="/customers" className={getNavClass('/customers')} onClick={handleLinkClick}>
                             <Users size={18} />
                             <span>{t('sidebar.customers')}</span>
                         </Link>
-                        <Link href="/suppliers" className={getNavClass('/suppliers')}>
+                        <Link href="/suppliers" className={getNavClass('/suppliers')} onClick={handleLinkClick}>
                             <Factory size={18} />
                             <span>{t('sidebar.suppliers')}</span>
                         </Link>
-                        <Link href="/staff" className={getNavClass('/staff')}>
+                        <Link href="/staff" className={getNavClass('/staff')} onClick={handleLinkClick}>
                             <UserCircle size={18} />
                             <span>{t('sidebar.staff')}</span>
                         </Link>
-                        <Link href="/staff/permissions" className={getNavClass('/staff/permissions')}>
+                        <Link href="/staff/permissions" className={getNavClass('/staff/permissions')} onClick={handleLinkClick}>
                             <Key size={18} />
                             <span>{t('sidebar.staff_permissions')}</span>
                         </Link>
@@ -137,15 +143,15 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     <div className="nav-section">
                         <h3>{t('sidebar.financial')}</h3>
-                        <Link href="/expenses" className={getNavClass('/expenses')}>
+                        <Link href="/expenses" className={getNavClass('/expenses')} onClick={handleLinkClick}>
                             <Receipt size={18} />
                             <span>{t('sidebar.expenses')}</span>
                         </Link>
-                        <Link href="/reports" className={getNavClass('/reports')}>
+                        <Link href="/reports" className={getNavClass('/reports')} onClick={handleLinkClick}>
                             <BarChart3 size={18} />
                             <span>{t('sidebar.reports')}</span>
                         </Link>
-                        <Link href="/backup" className={getNavClass('/backup')}>
+                        <Link href="/backup" className={getNavClass('/backup')} onClick={handleLinkClick}>
                             <Save size={18} />
                             <span>{t('sidebar.backup')}</span>
                         </Link>
@@ -153,7 +159,7 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     {/* <div className="nav-section">
                         <h3>{t('sidebar.settings')}</h3>
-                        <Link href="/subscriptions" className={getNavClass('/subscriptions')}>
+                        <Link href="/subscriptions" className={getNavClass('/subscriptions')} onClick={handleLinkClick}>
                             <CreditCard size={18} />
                             <span>{t('sidebar.subscription')}</span>
                         </Link>
@@ -161,7 +167,7 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
                     <div className="nav-section">
                         <h3>{t('sidebar.weather')}</h3>
-                        <Link href="/weather" className={getNavClass('/weather')}>
+                        <Link href="/weather" className={getNavClass('/weather')} onClick={handleLinkClick}>
                             <CloudSun size={18} />
                             <span>{t('sidebar.weather_dashboard')}</span>
                         </Link>
