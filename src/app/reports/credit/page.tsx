@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface MetricCardProps {
@@ -25,20 +26,21 @@ function MetricCard({ title, amount, subtext, barColor, barWidth }: MetricCardPr
 }
 
 export default function CreditReportPage() {
+  const { t } = useLanguage();
   return (
     <div className="cr-container">
       {/* Title Card */}
       <div className="cr-title-card">
         <div className="cr-title-left">
-          <h2 className="cr-title">Credit Control Report</h2>
-          <p className="cr-subtitle">Outstanding customer udhar, credit limits, last credit activity, and recovery ageing.</p>
+          <h2 className="cr-title">{t('cr.title')}</h2>
+          <p className="cr-subtitle">{t('cr.subtitle')}</p>
         </div>
         <div className="cr-title-actions">
           <button className="btn btn-green cr-btn-reminders">
-            Payment Reminders
+            {t('cr.payment_reminders')}
           </button>
           <button className="btn cr-btn-white">
-            Open Khata
+            {t('cr.open_khata')}
           </button>
         </div>
       </div>
@@ -46,30 +48,30 @@ export default function CreditReportPage() {
       {/* Metrics Grid */}
       <div className="cr-metrics-grid">
         <MetricCard 
-          title="TOTAL OUTSTANDING" 
+          title={t('cr.total_outstanding')} 
           amount="INR 0.00" 
-          subtext="Amount to collect from customers"
+          subtext={t('cr.total_outstanding_sub')}
           barColor="bg-red-600"
           barWidth="100%"
         />
         <MetricCard 
-          title="CUSTOMERS WITH CREDIT" 
+          title={t('cr.customers_with_credit')} 
           amount="0" 
-          subtext="Customers currently carrying balance"
+          subtext={t('cr.customers_with_credit_sub')}
           barColor="bg-blue-600"
           barWidth="10%"
         />
         <MetricCard 
-          title="AVERAGE BALANCE" 
+          title={t('cr.average_balance')} 
           amount="INR 0.00" 
-          subtext="Average outstanding per customer"
+          subtext={t('cr.average_balance_sub')}
           barColor="bg-gray-200"
           barWidth="100%"
         />
         <MetricCard 
-          title="LIMIT WATCH" 
+          title={t('cr.limit_watch')} 
           amount="0" 
-          subtext="Over limit customers, INR 0.00 available credit"
+          subtext={t('cr.limit_watch_sub')}
           barColor="bg-gray-200"
           barWidth="100%"
         />
@@ -80,8 +82,8 @@ export default function CreditReportPage() {
         {/* Age Analysis */}
         <div className="cr-card">
           <div className="cr-card-header">
-            <h4>Age Analysis</h4>
-            <p className="cr-card-sub">Outstanding balance grouped by days since last credit entry</p>
+            <h4>{t('cr.age_analysis')}</h4>
+            <p className="cr-card-sub">{t('cr.age_analysis_sub')}</p>
           </div>
           <div className="cr-age-list">
             <div className="cr-age-row">
@@ -118,11 +120,11 @@ export default function CreditReportPage() {
         {/* Priority Follow-Up */}
         <div className="cr-card">
           <div className="cr-card-header">
-            <h4>Priority Follow-Up</h4>
-            <p className="cr-card-sub">Largest outstanding balances</p>
+            <h4>{t('cr.priority_follow_up')}</h4>
+            <p className="cr-card-sub">{t('cr.priority_follow_up_sub')}</p>
           </div>
           <div className="cr-empty-state">
-            <span>No outstanding credit to follow up.</span>
+            <span>{t('cr.no_outstanding')}</span>
           </div>
         </div>
       </div>
@@ -131,30 +133,30 @@ export default function CreditReportPage() {
       <div className="cr-card mt-0">
         <div className="cr-table-header-flex">
           <div className="cr-card-header">
-            <h4>Customers with Outstanding Balance</h4>
-            <p className="cr-card-sub">Customer wise credit, payments, limit status, and ledger access</p>
+            <h4>{t('cr.customers_outstanding_balance')}</h4>
+            <p className="cr-card-sub">{t('cr.customers_outstanding_balance_sub')}</p>
           </div>
-          <span className="cr-records-count">0 records</span>
+          <span className="cr-records-count">{t('cr.no_records')}</span>
         </div>
         
         <div className="cr-table-wrapper">
           <table className="cr-table">
             <thead>
               <tr>
-                <th>CUSTOMER</th>
-                <th>CONTACT</th>
-                <th>OUTSTANDING</th>
-                <th>CREDIT LIMIT</th>
-                <th>LIMIT USAGE</th>
-                <th>LAST CREDIT</th>
-                <th>PAYMENTS</th>
-                <th>ACTION</th>
+                <th>{t('cr.table.customer')}</th>
+                <th>{t('cr.table.contact')}</th>
+                <th>{t('cr.table.outstanding')}</th>
+                <th>{t('cr.table.credit_limit')}</th>
+                <th>{t('cr.table.limit_usage')}</th>
+                <th>{t('cr.table.last_credit')}</th>
+                <th>{t('cr.table.payments')}</th>
+                <th>{t('cr.table.action')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td colSpan={8} className="cr-empty-cell">
-                  No outstanding credits found.
+                  {t('cr.no_outstanding_found')}
                 </td>
               </tr>
             </tbody>

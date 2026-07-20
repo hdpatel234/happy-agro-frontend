@@ -16,6 +16,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface ReportCardProps {
@@ -57,43 +58,44 @@ function ReportCard({ title, description, icon, iconBg, arrowColor, href }: Repo
 }
 
 export default function ReportsPage() {
+  const { t } = useLanguage();
   return (
     <div className="rpt-container">
       {/* Header */}
       <div className="rpt-header">
-        <h2 className="rpt-title">Reports & Analytics</h2>
-        <p className="rpt-subtitle">View detailed reports, charts, and export data</p>
+        <h2 className="rpt-title">{t('reports.title')}</h2>
+        <p className="rpt-subtitle">{t('reports.subtitle')}</p>
       </div>
 
       {/* Main Grid */}
       <div className="rpt-grid">
         <ReportCard 
-          title="Sales Report" 
-          description="Daily, monthly, and yearly sales analysis with charts and PDF export" 
+          title={t('reports.sales_report')} 
+          description={t('reports.sales_report_desc')} 
           icon={<CircleDollarSign size={24} className="text-orange-500" />} 
           iconBg="bg-blue-100" 
           arrowColor="text-blue-500" 
           href="/reports/sales"
         />
         <ReportCard 
-          title="Purchase Report" 
-          description="Track all purchases, supplier analysis, and purchase trends" 
+          title={t('reports.purchase_report')} 
+          description={t('reports.purchase_report_desc')} 
           icon={<ShoppingCart size={24} className="text-green-500" />} 
           iconBg="bg-green-100" 
           arrowColor="text-green-500" 
           href="/reports/purchases"
         />
         <ReportCard 
-          title="Profit & Loss" 
-          description="Complete P&L statement with revenue, COGS, expenses, and margins" 
+          title={t('reports.profit_loss')} 
+          description={t('reports.profit_loss_desc')} 
           icon={<BarChart size={24} className="text-purple-500" />} 
           iconBg="bg-purple-100" 
           arrowColor="text-purple-500" 
           href="/reports/profit-loss"
         />
         <ReportCard 
-          title="Stock Report" 
-          description="Current stock levels, stock value, low stock alerts, and category breakdown" 
+          title={t('reports.stock_report')} 
+          description={t('reports.stock_report_desc')} 
           icon={<PackageSearch size={24} className="text-orange-700" />} 
           iconBg="bg-orange-100" 
           arrowColor="text-orange-500" 
@@ -101,39 +103,39 @@ export default function ReportsPage() {
         />
 
         <ReportCard 
-          title="Credit (Udhar) Report" 
-          description="Outstanding balances, age analysis, and customer credit details" 
+          title={t('reports.credit_report')} 
+          description={t('reports.credit_report_desc')} 
           icon={<FileText size={24} className="text-red-500" />} 
           iconBg="bg-red-100" 
           arrowColor="text-red-500" 
           href="/reports/credit"
         />
         <ReportCard 
-          title="Sales Credit" 
-          description="Customer-wise order count, sales amount, paid amount, and pending receivables" 
+          title={t('reports.sales_credit')} 
+          description={t('reports.sales_credit_desc')} 
           icon={<Banknote size={24} className="text-green-600" />} 
           iconBg="bg-pink-100" 
           arrowColor="text-pink-500" 
           href="/reports/sales-credit"
         />
         <ReportCard 
-          title="Purchase Credit" 
-          description="Supplier-wise purchase orders, purchase amount, paid amount, and pending payables" 
+          title={t('reports.purchase_credit')} 
+          description={t('reports.purchase_credit_desc')} 
           icon={<CreditCard size={24} className="text-blue-500" />} 
           iconBg="bg-yellow-100" 
           arrowColor="text-orange-400" 
         />
         <ReportCard 
-          title="Sales Return" 
-          description="Today: INR 0.00 | Month: INR 0.00" 
+          title={t('reports.sales_return')} 
+          description={t('reports.sales_return_desc')} 
           icon={<RotateCcw size={24} className="text-gray-700" />} 
           iconBg="bg-gray-100" 
           arrowColor="text-gray-900" 
         />
 
         <ReportCard 
-          title="Purchase Return" 
-          description="Today: INR 0.00 | Month: INR 0.00" 
+          title={t('reports.purchase_return')} 
+          description={t('reports.purchase_return_desc')} 
           icon={<PackageX size={24} className="text-blue-400" />} 
           iconBg="bg-blue-50" 
           arrowColor="text-gray-900" 
@@ -142,10 +144,10 @@ export default function ReportsPage() {
         {/* Locked Feature Card */}
         <div className="rpt-locked-card">
           <TriangleAlert size={32} className="text-orange-400 mb-2" />
-          <h4 className="rpt-locked-title">Feature Not Available</h4>
-          <p className="rpt-locked-desc">Upgrade to Diamond plan to access this feature.</p>
+          <h4 className="rpt-locked-title">{t('reports.feature_locked')}</h4>
+          <p className="rpt-locked-desc">{t('reports.feature_locked_desc')}</p>
           <button className="rpt-upgrade-btn">
-            <Sparkles size={16} /> Upgrade Plan
+            <Sparkles size={16} /> {t('reports.upgrade_plan')}
           </button>
         </div>
       </div>
@@ -153,11 +155,11 @@ export default function ReportsPage() {
       {/* Summary Boxes */}
       <div className="rpt-summary-grid mt-24">
         <div className="rpt-summary-box">
-          <span className="rpt-summary-label">Refund Pending</span>
+          <span className="rpt-summary-label">{t('reports.refund_pending')}</span>
           <span className="rpt-summary-value text-orange-500">0</span>
         </div>
         <div className="rpt-summary-box">
-          <span className="rpt-summary-label">Supplier Adjustment Pending</span>
+          <span className="rpt-summary-label">{t('reports.supplier_adj_pending')}</span>
           <span className="rpt-summary-value text-orange-500">0</span>
         </div>
       </div>

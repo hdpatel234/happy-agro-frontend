@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FileText } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface MetricCardProps {
@@ -20,31 +21,32 @@ function MetricCard({ title, amount, amountColor = "text-gray-900" }: MetricCard
 }
 
 export default function StockReportPage() {
+  const { t } = useLanguage();
   return (
     <div className="sr-container">
       {/* Header */}
       <div className="sr-header">
         <div className="sr-title-section">
-          <h2 className="sr-title">Stock Report</h2>
-          <p className="sr-subtitle">Current inventory status and stock valuation</p>
+          <h2 className="sr-title">{t('sr.title')}</h2>
+          <p className="sr-subtitle">{t('sr.subtitle')}</p>
         </div>
         <button className="btn sr-btn-red">
-          <FileText size={16} /> Export PDF
+          <FileText size={16} /> {t('sr.export_pdf')}
         </button>
       </div>
 
       {/* Metrics Grid */}
       <div className="sr-metrics-grid">
         <MetricCard 
-          title="Total Products" 
+          title={t('sr.total_products')} 
           amount="1" 
         />
         <MetricCard 
-          title="Total Stock Value" 
+          title={t('sr.total_stock_value')} 
           amount="₹9,900.00" 
         />
         <MetricCard 
-          title="Low Stock Items" 
+          title={t('sr.low_stock_items')} 
           amount="0" 
           amountColor="text-red-500"
         />
@@ -53,7 +55,7 @@ export default function StockReportPage() {
       {/* Bar Chart Mockup */}
       <div className="sr-chart-card">
         <div className="sr-card-header">
-          <h4>Stock by Category</h4>
+          <h4>{t('sr.stock_by_category')}</h4>
         </div>
         <div className="sr-bar-chart-container">
           <div className="sr-y-axis">
@@ -79,7 +81,7 @@ export default function StockReportPage() {
             <div className="sr-bars">
               <div className="sr-bar-wrapper">
                 <div className="sr-bar bg-blue-500" style={{ height: '99%' }}></div>
-                <span className="sr-x-label">Uncategorized</span>
+                <span className="sr-x-label">{t('sr.uncategorized')}</span>
               </div>
             </div>
           </div>
@@ -90,22 +92,22 @@ export default function StockReportPage() {
       <div className="sr-table-card">
         <div className="sr-table-filters">
           <select className="sr-select">
-            <option>All Stock</option>
+            <option>{t('sr.all_stock')}</option>
           </select>
           <button className="btn btn-green sr-btn-filter">
-            Filter
+            {t('sr.filter')}
           </button>
         </div>
         <div className="sr-table-wrapper">
           <table className="sr-table">
             <thead>
               <tr>
-                <th>PRODUCT</th>
-                <th>CATEGORY</th>
-                <th>STOCK</th>
-                <th>COST PRICE</th>
-                <th>STOCK VALUE</th>
-                <th>STATUS</th>
+                <th>{t('sr.table.product')}</th>
+                <th>{t('sr.table.category')}</th>
+                <th>{t('sr.table.stock')}</th>
+                <th>{t('sr.table.cost_price')}</th>
+                <th>{t('sr.table.stock_value')}</th>
+                <th>{t('sr.table.status')}</th>
               </tr>
             </thead>
             <tbody>

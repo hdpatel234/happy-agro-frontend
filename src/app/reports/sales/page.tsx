@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Package
 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface MetricCardProps {
@@ -46,20 +47,21 @@ function MetricCard({ title, amount, icon, iconBg, trend, trendColor = "text-gre
 }
 
 export default function SalesReportPage() {
+  const { t } = useLanguage();
   return (
     <div className="srp-container">
       {/* Header */}
       <div className="srp-header">
         <div className="srp-title-section">
-          <h2 className="srp-title">Sales Report</h2>
-          <p className="srp-subtitle">Analyze your sales performance with detailed insights</p>
+          <h2 className="srp-title">{t('srp.title')}</h2>
+          <p className="srp-subtitle">{t('srp.subtitle')}</p>
         </div>
         <div className="srp-header-actions">
           <button className="btn srp-btn-red">
-            <FileText size={16} /> Export PDF
+            <FileText size={16} /> {t('srp.export_pdf')}
           </button>
           <button className="btn btn-green srp-btn-green">
-            Apply Filter
+            {t('srp.apply_filter')}
           </button>
         </div>
       </div>
@@ -67,29 +69,29 @@ export default function SalesReportPage() {
       {/* Filters */}
       <div className="srp-filters-bar">
         <div className="srp-form-group">
-          <label>From Date</label>
+          <label>{t('srp.from_date')}</label>
           <input type="date" className="srp-input" defaultValue="2026-07-01" />
         </div>
         <div className="srp-form-group">
-          <label>To Date</label>
+          <label>{t('srp.to_date')}</label>
           <input type="date" className="srp-input" defaultValue="2026-07-20" />
         </div>
         <div className="srp-form-group">
-          <label>Report Type</label>
+          <label>{t('srp.report_type')}</label>
           <select className="srp-input">
-            <option>Monthly</option>
+            <option>{t('srp.monthly')}</option>
           </select>
         </div>
         <div className="srp-form-group">
-          <label>Shop / Outlet</label>
+          <label>{t('srp.shop_outlet')}</label>
           <select className="srp-input">
-            <option>All Shops</option>
+            <option>{t('srp.all_shops')}</option>
           </select>
         </div>
         <div className="srp-form-group">
-          <label>Payment Mode</label>
+          <label>{t('srp.payment_mode')}</label>
           <select className="srp-input">
-            <option>All</option>
+            <option>{t('srp.all')}</option>
           </select>
         </div>
       </div>
@@ -97,42 +99,42 @@ export default function SalesReportPage() {
       {/* Metrics Grid */}
       <div className="srp-metrics-grid">
         <MetricCard 
-          title="Total Sales" 
+          title={t('srp.total_sales')} 
           amount="₹120.00" 
           icon={<CircleDollarSign size={16} className="text-green-600" />} 
           iconBg="bg-green-100" 
-          trend="0% vs last month" 
+          trend={t('srp.trend_vs_last_month')} 
         />
         <MetricCard 
-          title="Collection Received" 
+          title={t('srp.collection_received')} 
           amount="₹120.00" 
           icon={<Wallet size={16} className="text-blue-500" />} 
           iconBg="bg-blue-100" 
-          trend="0% vs last month" 
+          trend={t('srp.trend_vs_last_month')} 
         />
         <MetricCard 
-          title="Pending Udhar" 
+          title={t('srp.pending_udhar')} 
           amount="₹0.00" 
           amountColor="text-orange-500"
           icon={<Clock size={16} className="text-orange-500" />} 
           iconBg="bg-orange-100" 
         />
         <MetricCard 
-          title="Total Bills" 
+          title={t('srp.total_bills')} 
           amount="1" 
           icon={<Receipt size={16} className="text-purple-500" />} 
           iconBg="bg-purple-100" 
-          trend="0% vs last month" 
+          trend={t('srp.trend_vs_last_month')} 
         />
         <MetricCard 
-          title="Avg Bill Value" 
+          title={t('srp.avg_bill_value')} 
           amount="₹120.00" 
           icon={<Calculator size={16} className="text-blue-500" />} 
           iconBg="bg-blue-100" 
-          trend="0% vs last month" 
+          trend={t('srp.trend_vs_last_month')} 
         />
         <MetricCard 
-          title="Profit (Est.)" 
+          title={t('srp.profit_est')} 
           amount="₹120.00" 
           icon={<TrendingUp size={16} className="text-gray-700" />} 
           iconBg="bg-gray-100" 
@@ -144,8 +146,8 @@ export default function SalesReportPage() {
         {/* Line Chart Mockup */}
         <div className="srp-chart-card">
           <div className="srp-chart-header">
-            <h4>Sales Trend</h4>
-            <select className="srp-chart-select"><option>Daily</option></select>
+            <h4>{t('srp.sales_trend')}</h4>
+            <select className="srp-chart-select"><option>{t('srp.daily')}</option></select>
           </div>
           <div className="srp-line-chart-mock">
             {/* CSS Mockup of Line Chart */}
@@ -168,7 +170,7 @@ export default function SalesReportPage() {
         {/* Donut Chart Mockup */}
         <div className="srp-chart-card">
           <div className="srp-chart-header">
-            <h4>Payment Mode Breakdown</h4>
+            <h4>{t('srp.payment_mode_breakdown')}</h4>
           </div>
           <div className="srp-donut-container">
             <div className="srp-donut">
@@ -181,7 +183,7 @@ export default function SalesReportPage() {
           <div className="srp-donut-legend">
             <div className="srp-legend-item">
               <div className="srp-legend-color bg-green-500"></div>
-              <span>Cash</span>
+              <span>{t('srp.cash')}</span>
             </div>
             <div className="srp-legend-vals">
               <span className="srp-legend-amt">₹120.00</span>
@@ -193,8 +195,8 @@ export default function SalesReportPage() {
         {/* Top Selling Products */}
         <div className="srp-chart-card">
           <div className="srp-chart-header">
-            <h4>Top Selling Products</h4>
-            <a href="#" className="srp-view-all">View All</a>
+            <h4>{t('srp.top_selling_products')}</h4>
+            <a href="#" className="srp-view-all">{t('srp.view_all')}</a>
           </div>
           <div className="srp-top-product">
             <div className="srp-product-info">
@@ -220,22 +222,22 @@ export default function SalesReportPage() {
         {/* Table */}
         <div className="srp-table-card">
           <div className="srp-chart-header">
-            <h4>Daywise Sales Summary</h4>
-            <span className="srp-table-info">Showing 1 to 1 of 1 entries</span>
+            <h4>{t('srp.daywise_sales_summary')}</h4>
+            <span className="srp-table-info">{t('srp.showing_entries')}</span>
           </div>
           <div className="srp-table-wrapper">
             <table className="srp-table">
               <thead>
                 <tr>
-                  <th>DATE</th>
-                  <th>BILLS</th>
-                  <th>SALES (₹)</th>
-                  <th>PAID (₹)</th>
-                  <th>PENDING (₹)</th>
-                  <th>CASH (₹)</th>
-                  <th>ONLINE (₹)</th>
-                  <th>UDHAR (₹)</th>
-                  <th>PROFIT (₹)</th>
+                  <th>{t('srp.table.date')}</th>
+                  <th>{t('srp.table.bills')}</th>
+                  <th>{t('srp.table.sales')}</th>
+                  <th>{t('srp.table.paid')}</th>
+                  <th>{t('srp.table.pending')}</th>
+                  <th>{t('srp.table.cash')}</th>
+                  <th>{t('srp.table.online')}</th>
+                  <th>{t('srp.table.udhar')}</th>
+                  <th>{t('srp.table.profit')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -258,28 +260,28 @@ export default function SalesReportPage() {
         {/* Quick Insights */}
         <div className="srp-insights-card">
           <div className="srp-chart-header">
-            <h4>Quick Insights</h4>
+            <h4>{t('srp.quick_insights')}</h4>
           </div>
           <div className="srp-insights-grid">
             <div className="srp-insight-box">
-              <span className="srp-insight-lbl">Highest Sales Day</span>
+              <span className="srp-insight-lbl">{t('srp.highest_sales_day')}</span>
               <span className="srp-insight-val font-600">19 Jul 2026</span>
               <span className="srp-insight-sub text-gray-500">₹120.00</span>
             </div>
             <div className="srp-insight-box">
-              <span className="srp-insight-lbl">Best Selling Product</span>
+              <span className="srp-insight-lbl">{t('srp.best_selling_product')}</span>
               <span className="srp-insight-val font-600">Test</span>
               <span className="srp-insight-sub text-gray-500">₹120.00</span>
             </div>
             <div className="srp-insight-box">
-              <span className="srp-insight-lbl">Most Used Payment Mode</span>
-              <span className="srp-insight-val font-600">Cash</span>
-              <span className="srp-insight-sub text-gray-500">100% of total sales</span>
+              <span className="srp-insight-lbl">{t('srp.most_used_payment_mode')}</span>
+              <span className="srp-insight-val font-600">{t('srp.cash')}</span>
+              <span className="srp-insight-sub text-gray-500">{t('srp.total_sales_100')}</span>
             </div>
             <div className="srp-insight-box">
-              <span className="srp-insight-lbl">Avg Daily Sales</span>
+              <span className="srp-insight-lbl">{t('srp.avg_daily_sales')}</span>
               <span className="srp-insight-val font-600">₹120.00</span>
-              <span className="srp-insight-sub text-green-500">▲ 0% vs last month</span>
+              <span className="srp-insight-sub text-green-500">▲ {t('srp.trend_vs_last_month')}</span>
             </div>
           </div>
         </div>

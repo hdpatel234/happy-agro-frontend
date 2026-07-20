@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FileText } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface MetricCardProps {
@@ -22,16 +23,17 @@ function MetricCard({ title, amount, subtext, amountColor = "text-gray-900" }: M
 }
 
 export default function ProfitLossPage() {
+  const { t } = useLanguage();
   return (
     <div className="pl-container">
       {/* Header */}
       <div className="pl-header">
         <div className="pl-title-section">
-          <h2 className="pl-title">Profit & Loss Report</h2>
-          <p className="pl-subtitle">Complete financial analysis of your business</p>
+          <h2 className="pl-title">{t('pl.title')}</h2>
+          <p className="pl-subtitle">{t('pl.subtitle')}</p>
         </div>
         <button className="btn pl-btn-red">
-          <FileText size={16} /> Export PDF
+          <FileText size={16} /> {t('pl.export_pdf')}
         </button>
       </div>
 
@@ -40,49 +42,49 @@ export default function ProfitLossPage() {
         <input type="date" className="pl-input" defaultValue="2026-07-01" />
         <input type="date" className="pl-input" defaultValue="2026-07-20" />
         <button className="btn btn-green pl-btn-filter">
-          Apply Filter
+          {t('pl.apply_filter')}
         </button>
       </div>
 
       {/* Metrics Grid */}
       <div className="pl-metrics-grid">
         <MetricCard 
-          title="TOTAL REVENUE" 
+          title={t('pl.total_revenue')} 
           amount="₹120.00" 
-          subtext="Sales + Orders"
+          subtext={t('pl.total_revenue_sub')}
         />
         <MetricCard 
-          title="GROSS PROFIT" 
+          title={t('pl.gross_profit')} 
           amount="₹20.00" 
           amountColor="text-green-600"
-          subtext="Margin: 16.7%"
+          subtext={t('pl.gross_profit_sub')}
         />
         <MetricCard 
-          title="NET PROFIT" 
+          title={t('pl.net_profit')} 
           amount="₹-80.00" 
           amountColor="text-red-500"
-          subtext="Margin: -66.7%"
+          subtext={t('pl.net_profit_sub')}
         />
         <MetricCard 
-          title="PENDING COLLECTION" 
+          title={t('pl.pending_collection')} 
           amount="₹0.00"
           amountColor="text-orange-500"
-          subtext="Collected: ₹120"
+          subtext={t('pl.pending_collection_sub')}
         />
       </div>
 
       {/* Profit & Loss Statement */}
       <div className="pl-statement-card">
         <div className="pl-card-header">
-          <h4>Profit & Loss Statement</h4>
+          <h4>{t('pl.statement')}</h4>
         </div>
         
         <div className="pl-statement-list">
           {/* Revenue */}
           <div className="pl-statement-row">
             <div className="pl-row-left">
-              <span className="pl-row-title">Revenue (Sales)</span>
-              <span className="pl-row-sub">Total invoices + orders during the period</span>
+              <span className="pl-row-title">{t('pl.revenue_sales')}</span>
+              <span className="pl-row-sub">{t('pl.revenue_sales_sub')}</span>
             </div>
             <span className="pl-row-amt text-green-600">+ ₹120.00</span>
           </div>
@@ -90,8 +92,8 @@ export default function ProfitLossPage() {
           {/* COGS */}
           <div className="pl-statement-row">
             <div className="pl-row-left">
-              <span className="pl-row-title">Cost of Goods Sold (COGS)</span>
-              <span className="pl-row-sub">Cost price of products sold (from variant cost)</span>
+              <span className="pl-row-title">{t('pl.cogs')}</span>
+              <span className="pl-row-sub">{t('pl.cogs_sub')}</span>
             </div>
             <span className="pl-row-amt text-red-500">- ₹100.00</span>
           </div>
@@ -99,8 +101,8 @@ export default function ProfitLossPage() {
           {/* Gross Profit Highlight */}
           <div className="pl-statement-row pl-highlight-green">
             <div className="pl-row-left">
-              <span className="pl-row-title font-700">Gross Profit</span>
-              <span className="pl-row-sub text-gray-600">Revenue - COGS | Margin: 16.7%</span>
+              <span className="pl-row-title font-700">{t('pl.gross_profit_title')}</span>
+              <span className="pl-row-sub text-gray-600">{t('pl.gross_profit_desc')}</span>
             </div>
             <span className="pl-row-amt text-green-600 font-700">₹20.00</span>
           </div>
@@ -108,8 +110,8 @@ export default function ProfitLossPage() {
           {/* Expenses */}
           <div className="pl-statement-row">
             <div className="pl-row-left">
-              <span className="pl-row-title">Operating Expenses</span>
-              <span className="pl-row-sub">Total expenses recorded during the period</span>
+              <span className="pl-row-title">{t('pl.operating_expenses')}</span>
+              <span className="pl-row-sub">{t('pl.operating_expenses_sub')}</span>
             </div>
             <span className="pl-row-amt text-red-500">- ₹100.00</span>
           </div>
@@ -117,8 +119,8 @@ export default function ProfitLossPage() {
           {/* Net Profit Highlight */}
           <div className="pl-statement-row pl-highlight-red">
             <div className="pl-row-left">
-              <span className="pl-row-title font-700">Net Profit / Loss</span>
-              <span className="pl-row-sub text-gray-600">Gross Profit - Expenses | Margin: -66.7%</span>
+              <span className="pl-row-title font-700">{t('pl.net_profit_loss')}</span>
+              <span className="pl-row-sub text-gray-600">{t('pl.net_profit_loss_desc')}</span>
             </div>
             <span className="pl-row-amt text-red-500 font-700">₹-80.00</span>
           </div>
@@ -127,15 +129,15 @@ export default function ProfitLossPage() {
         {/* Extra Lines Footer */}
         <div className="pl-statement-footer">
           <div className="pl-footer-row">
-            <span>Total Purchases (Inventory Bought)</span>
+            <span>{t('pl.total_purchases')}</span>
             <span>₹0.00</span>
           </div>
           <div className="pl-footer-row">
-            <span>Total Collection Received</span>
+            <span>{t('pl.total_collection')}</span>
             <span className="text-green-600">₹120.00</span>
           </div>
           <div className="pl-footer-row">
-            <span>Pending (Udhar/Credit)</span>
+            <span>{t('pl.pending_udhar')}</span>
             <span className="text-orange-500">₹0.00</span>
           </div>
         </div>
@@ -146,11 +148,11 @@ export default function ProfitLossPage() {
         {/* Bar Chart Mockup */}
         <div className="pl-chart-card">
           <div className="pl-card-header">
-            <h4>Monthly Sales vs Expenses</h4>
+            <h4>{t('pl.monthly_sales_expenses')}</h4>
           </div>
           <div className="pl-bar-legend">
-            <div className="pl-legend-item"><div className="pl-legend-color bg-green-400"></div><span>Sales</span></div>
-            <div className="pl-legend-item"><div className="pl-legend-color bg-red-400"></div><span>Expenses</span></div>
+            <div className="pl-legend-item"><div className="pl-legend-color bg-green-400"></div><span>{t('pl.sales')}</span></div>
+            <div className="pl-legend-item"><div className="pl-legend-color bg-red-400"></div><span>{t('pl.expenses')}</span></div>
           </div>
           <div className="pl-bar-chart-container">
             <div className="pl-y-axis">
@@ -175,7 +177,7 @@ export default function ProfitLossPage() {
         {/* Donut Chart Mockup */}
         <div className="pl-chart-card">
           <div className="pl-card-header">
-            <h4>Expense Breakdown</h4>
+            <h4>{t('pl.expense_breakdown')}</h4>
           </div>
           <div className="pl-donut-container">
             <div className="pl-donut">
@@ -185,7 +187,7 @@ export default function ProfitLossPage() {
           <div className="pl-donut-legend">
             <div className="pl-legend-item">
               <div className="pl-legend-color bg-red-500"></div>
-              <span>Certification</span>
+              <span>{t('pl.certification')}</span>
             </div>
           </div>
         </div>
@@ -194,12 +196,12 @@ export default function ProfitLossPage() {
       {/* Expense by Category */}
       <div className="pl-category-card">
         <div className="pl-card-header">
-          <h4>Expense by Category</h4>
+          <h4>{t('pl.expense_by_category')}</h4>
         </div>
         <div className="pl-category-list">
           <div className="pl-category-item">
             <div className="pl-category-info">
-              <span className="pl-category-name">Certification</span>
+              <span className="pl-category-name">{t('pl.certification')}</span>
               <div className="pl-category-stats">
                 <span className="text-red-500 font-600">₹100.00</span>
                 <span className="text-gray-500 text-xs">(100.0%)</span>

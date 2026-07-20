@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 interface MetricCardProps {
@@ -21,12 +22,13 @@ function MetricCard({ title, amount, amountColor = "text-gray-900", subtext }: M
 }
 
 export default function PurchaseReportPage() {
+  const { t } = useLanguage();
   return (
     <div className="prp-container">
       {/* Header */}
       <div className="prp-header">
-        <h2 className="prp-title">Purchase Report</h2>
-        <p className="prp-subtitle">Track all your purchase transactions</p>
+        <h2 className="prp-title">{t('prp.title')}</h2>
+        <p className="prp-subtitle">{t('prp.subtitle')}</p>
       </div>
 
       {/* Filters */}
@@ -34,63 +36,63 @@ export default function PurchaseReportPage() {
         <input type="date" className="prp-input" defaultValue="2026-07-01" />
         <input type="date" className="prp-input" defaultValue="2026-07-20" />
         <button className="btn btn-green prp-btn-filter">
-          Apply Filter
+          {t('prp.apply_filter')}
         </button>
       </div>
 
       {/* Metrics Grid */}
       <div className="prp-metrics-grid">
         <MetricCard 
-          title="Gross Purchase" 
+          title={t('prp.gross_purchase')} 
           amount="₹0.00" 
         />
         <MetricCard 
-          title="Purchase Return" 
+          title={t('prp.purchase_return')} 
           amount="₹0.00" 
           amountColor="text-red-500"
         />
         <MetricCard 
-          title="Net Purchase" 
+          title={t('prp.net_purchase')} 
           amount="₹0.00" 
           amountColor="text-green-600"
         />
         
         <MetricCard 
-          title="Purchased Qty" 
+          title={t('prp.purchased_qty')} 
           amount="0.00" 
         />
         <MetricCard 
-          title="Returned Qty" 
+          title={t('prp.returned_qty')} 
           amount="0.00" 
           amountColor="text-red-500"
         />
         <MetricCard 
-          title="Net Qty / Bills" 
+          title={t('prp.net_qty_bills')} 
           amount="0.00"
-          subtext="0 bills" 
+          subtext={t('prp.bills_0')} 
         />
       </div>
 
       {/* Transactions Table */}
       <div className="prp-table-card">
         <div className="prp-table-header">
-          <h4>Purchase Transactions</h4>
+          <h4>{t('prp.purchase_transactions')}</h4>
         </div>
         <div className="prp-table-wrapper">
           <table className="prp-table">
             <thead>
               <tr>
-                <th>DATE</th>
-                <th>INVOICE NO</th>
-                <th>SUPPLIER</th>
-                <th>AMOUNT</th>
-                <th>STATUS</th>
+                <th>{t('prp.table.date')}</th>
+                <th>{t('prp.table.invoice_no')}</th>
+                <th>{t('prp.table.supplier')}</th>
+                <th>{t('prp.table.amount')}</th>
+                <th>{t('prp.table.status')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td colSpan={5} className="prp-empty-cell">
-                  No purchases found
+                  {t('prp.no_purchases')}
                 </td>
               </tr>
             </tbody>
