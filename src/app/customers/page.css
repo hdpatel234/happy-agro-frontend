@@ -171,3 +171,28 @@
   background-color: #ef4444; /* Red */
 }
 .action-btn-delete:hover { background-color: #dc2626; }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .customers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .customers-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .customers-filter-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customer-search,
+  .customer-filter-btn,
+  .customer-clear-btn {
+    width: 100%;
+  }
+}

@@ -199,3 +199,33 @@
 .pr-empty-link:hover {
   text-decoration: underline;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .pr-action-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .pr-open-purchases-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pr-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-filter-row {
+    flex-direction: column;
+  }
+  
+  .pr-filter-actions {
+    flex-direction: column;
+  }
+
+  .pr-filter-btn, .pr-clear-btn {
+    width: 100%;
+  }
+}

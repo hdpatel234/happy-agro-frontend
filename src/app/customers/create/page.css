@@ -125,3 +125,14 @@
 .cc-btn-gray:hover {
   background-color: #cbd5e1;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cc-card {
+    padding: 24px;
+  }
+  
+  .cc-footer-actions {
+    grid-template-columns: 1fr;
+  }
+}

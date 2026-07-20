@@ -125,3 +125,18 @@
 .cs-btn-gray:hover {
   background-color: #cbd5e1;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cs-card {
+    padding: 24px;
+  }
+
+  .cs-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .cs-footer-actions {
+    grid-template-columns: 1fr;
+  }
+}

@@ -199,3 +199,33 @@
 .sr-empty-link:hover {
   text-decoration: underline;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sr-action-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .sr-open-orders-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sr-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-filter-row {
+    flex-direction: column;
+  }
+  
+  .sr-filter-actions {
+    flex-direction: column;
+  }
+
+  .sr-filter-btn, .sr-clear-btn {
+    width: 100%;
+  }
+}
