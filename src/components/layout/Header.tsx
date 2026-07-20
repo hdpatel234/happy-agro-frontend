@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { Bell, Globe, ChevronDown, Clock, Building2, Settings, List, LogOut, Menu } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import './Header.css';
@@ -131,10 +132,10 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
                     )}
                 </div>
 
-                <button className="notification-btn">
+                <Link href="/notifications" className="notification-btn">
                     <Bell size={18} />
                     <span className="badge">0</span>
-                </button>
+                </Link>
 
                 <div className="dropdown-container" ref={profileRef}>
                     <div className="user-profile" onClick={() => setIsProfileOpen(!isProfileOpen)}>
@@ -158,20 +159,20 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
                                 </div>
                             </div> */}
                             <div className="dropdown-divider"></div>
-                            <div className="dropdown-item">
+                            <Link href="/shop/profile" className="dropdown-item" onClick={() => setIsProfileOpen(false)}>
                                 <Building2 size={16} className="item-icon" />
                                 <span>{t('header.shop_profile')}</span>
-                            </div>
+                            </Link>
                             {/* <div className="dropdown-item">
                                 <Settings size={16} className="item-icon" />
                                 <span>{t('header.settings')}</span>
                             </div> */}
-                            <div className="dropdown-item">
+                            <Link href="/shops" className="dropdown-item" onClick={() => setIsProfileOpen(false)}>
                                 <Building2 size={16} className="item-icon" />
                                 <span>{t('header.shop_list')}</span>
-                            </div>
+                            </Link>
                             <div className="dropdown-divider"></div>
-                            <div className="dropdown-item text-danger">
+                            <div className="dropdown-item text-danger" onClick={() => setIsProfileOpen(false)}>
                                 <LogOut size={16} className="item-icon text-danger" />
                                 <span>{t('header.logout')}</span>
                             </div>
