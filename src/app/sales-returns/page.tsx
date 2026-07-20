@@ -2,38 +2,40 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function SalesReturnsPage() {
+  const { t } = useLanguage();
   return (
     <div className="sr-container">
       <div className="sr-header-hidden">
-        <h2>Sales Returns</h2>
+        <h2>{t('sales_returns.title')}</h2>
       </div>
 
       {/* Top Action Card */}
       <div className="sr-action-card">
         <div className="sr-action-text">
-          <h3 className="sr-action-title">Create Sales Return</h3>
-          <p className="sr-action-subtitle">Sales returns are created from an existing order or invoice.</p>
+          <h3 className="sr-action-title">{t('sales_returns.create')}</h3>
+          <p className="sr-action-subtitle">{t('sales_returns.create_sub')}</p>
         </div>
         <Link href="/orders" className="btn btn-primary sr-open-orders-btn">
-          Open Orders
+          {t('sales_returns.open_orders')}
         </Link>
       </div>
 
       {/* Metrics Grid */}
       <div className="sr-metrics-grid">
         <div className="sr-metric-card">
-          <span className="sr-metric-label">Today Sales Return</span>
+          <span className="sr-metric-label">{t('sales_returns.today')}</span>
           <span className="sr-metric-value">INR 0.00</span>
         </div>
         <div className="sr-metric-card">
-          <span className="sr-metric-label">Monthly Sales Return</span>
+          <span className="sr-metric-label">{t('sales_returns.monthly')}</span>
           <span className="sr-metric-value">INR 0.00</span>
         </div>
         <div className="sr-metric-card">
-          <span className="sr-metric-label">Refund Pending</span>
+          <span className="sr-metric-label">{t('sales_returns.refund_pending')}</span>
           <span className="sr-metric-value sr-text-orange">0</span>
         </div>
       </div>
@@ -44,18 +46,18 @@ export default function SalesReturnsPage() {
           <input type="date" className="sr-input" />
           <input type="date" className="sr-input" />
           <select className="sr-select">
-            <option>All Customers</option>
+            <option>{t('sales_returns.all_customers')}</option>
           </select>
           <select className="sr-select">
-            <option>All Status</option>
+            <option>{t('sales_returns.all_status')}</option>
           </select>
           <select className="sr-select">
-            <option>All Refund Types</option>
+            <option>{t('sales_returns.all_refund_types')}</option>
           </select>
         </div>
         <div className="sr-filter-actions">
-          <button className="btn btn-primary sr-filter-btn">Filter</button>
-          <button className="btn sr-clear-btn">Clear</button>
+          <button className="btn btn-primary sr-filter-btn">{t('sales_returns.filter')}</button>
+          <button className="btn sr-clear-btn">{t('sales_returns.clear')}</button>
         </div>
       </div>
 
@@ -64,23 +66,23 @@ export default function SalesReturnsPage() {
         <table className="sr-table">
           <thead>
             <tr>
-              <th>RETURN NO</th>
-              <th>DATE</th>
-              <th>SOURCE</th>
-              <th>CUSTOMER</th>
-              <th>AMOUNT</th>
-              <th>REFUND TYPE</th>
-              <th>STATUS</th>
-              <th>CREATED BY</th>
-              <th>ACTION</th>
+              <th>{t('sales_returns.table.return_no')}</th>
+              <th>{t('sales_returns.table.date')}</th>
+              <th>{t('sales_returns.table.source')}</th>
+              <th>{t('sales_returns.table.customer')}</th>
+              <th>{t('sales_returns.table.amount')}</th>
+              <th>{t('sales_returns.table.refund_type')}</th>
+              <th>{t('sales_returns.table.status')}</th>
+              <th>{t('sales_returns.table.created_by')}</th>
+              <th>{t('sales_returns.table.action')}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td colSpan={9} className="sr-empty-cell">
                 <div className="sr-empty-state">
-                  <p>No sales returns found.</p>
-                  <Link href="/orders" className="sr-empty-link">Open Orders to create a sales return</Link>
+                  <p>{t('sales_returns.no_returns')}</p>
+                  <Link href="/orders" className="sr-empty-link">{t('sales_returns.open_orders_create')}</Link>
                 </div>
               </td>
             </tr>

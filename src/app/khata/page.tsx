@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import { Users, IndianRupee, Factory, UserPlus, BookOpen, Plus } from 'lucide-react';

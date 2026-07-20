@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Plus, Users, Eye, Edit, Trash2 } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function StaffPage() {
+  const { t } = useLanguage();
   // Static state for demonstration purposes based on the screenshot
   const [showSuccess, setShowSuccess] = useState(true);
   const [staffList, setStaffList] = useState([
@@ -52,11 +54,11 @@ export default function StaffPage() {
       {/* Header */}
       <div className="staff-header">
         <div className="staff-title-section">
-          <h2 className="staff-title">Staff Management</h2>
-          <p className="staff-subtitle">Manage your shop staff members and their permissions</p>
+          <h2 className="staff-title">{t('staff.title')}</h2>
+          <p className="staff-subtitle">{t('staff.subtitle')}</p>
         </div>
         <Link href="/staff/create" className="btn btn-green staff-add-btn">
-          <Plus size={16} /> Add Staff Member
+          <Plus size={16} /> {t('staff.add_staff')}
         </Link>
       </div>
 
@@ -67,18 +69,18 @@ export default function StaffPage() {
           <input
             type="text"
             className="staff-input"
-            placeholder="Search by name, email, mobile..."
+            placeholder={t('staff.search_placeholder')}
           />
         </div>
         <div className="staff-form-group">
-          <label>User Type</label>
+          <label>{t('staff.user_type')}</label>
           <select className="staff-input">
-            <option>All Types</option>
+            <option>{t('staff.all_types')}</option>
           </select>
         </div>
         <div className="staff-filter-actions">
-          <button className="btn btn-green staff-filter-btn">Filter</button>
-          <button className="btn staff-clear-btn">Clear</button>
+          <button className="btn btn-green staff-filter-btn">{t('staff.filter')}</button>
+          <button className="btn staff-clear-btn">{t('staff.clear')}</button>
         </div>
       </div>
 
@@ -87,11 +89,11 @@ export default function StaffPage() {
         <table className="staff-table">
           <thead>
             <tr>
-              <th>STAFF MEMBER</th>
-              <th>CONTACT</th>
-              <th>ROLES</th>
-              <th>STATUS</th>
-              <th>ACTIONS</th>
+              <th>{t('staff.table.member')}</th>
+              <th>{t('staff.table.contact')}</th>
+              <th>{t('staff.table.roles')}</th>
+              <th>{t('staff.table.status')}</th>
+              <th>{t('staff.table.actions')}</th>
             </tr>
           </thead>
           <tbody>
@@ -109,10 +111,10 @@ export default function StaffPage() {
                   </td>
                   <td className="text-muted">{staff.contact}</td>
                   <td>
-                    <span className="staff-role-badge">{staff.role}</span>
+                    <span className="staff-role-badge">{staff.role === 'staff' ? t('staff.role_staff') : staff.role === 'manager' ? t('staff.role_manager') : staff.role === 'admin' ? t('staff.role_admin') : staff.role}</span>
                   </td>
                   <td>
-                    <span className="badge-active">{staff.status}</span>
+                    <span className="badge-active">{staff.status === 'Active' ? t('staff.active') : staff.status}</span>
                   </td>
                   <td>
                     <div className="staff-action-icons">
@@ -128,8 +130,8 @@ export default function StaffPage() {
                 <td colSpan={5} className="staff-empty-cell">
                   <div className="staff-empty-state">
                     <Users size={48} className="staff-empty-icon" />
-                    <h4 className="staff-empty-title">No staff members found</h4>
-                    <p className="staff-empty-desc">Start by adding your first staff member</p>
+                    <h4 className="staff-empty-title">{t('staff.no_staff')}</h4>
+                    <p className="staff-empty-desc">{t('staff.start_adding')}</p>
                   </div>
                 </td>
               </tr>
@@ -141,10 +143,10 @@ export default function StaffPage() {
       <Modal 
         isOpen={isDeleteModalOpen}
         type="error"
-        title="Delete Staff Member"
-        message="Are you sure you want to delete this staff member? This action cannot be undone."
-        confirmText="Delete"
-        cancelText="Cancel"
+        title={t('staff.delete_title')}
+        message={t('staff.delete_message')}
+        confirmText={t('staff.delete_confirm')}
+        cancelText={t('staff.cancel')}
         onConfirm={confirmDelete}
         onCancel={closeDeleteModal}
       />
