@@ -41,8 +41,10 @@ const en: Record<string, string> = {
   'header.settings': 'Settings',
   'header.shop_list': 'Shop List',
   'header.logout': 'Logout',
-  
+
   // Page Titles
+  'title.shops': 'My Shops',
+  'title.shop_profile': 'Shop Profile',
   'title.pos': 'Point of Sale',
   'title.add_ledger_entry': 'Add Ledger Entry',
   'title.khata_book': 'Khata Book - Manage Customers & Suppliers',
@@ -1064,7 +1066,7 @@ const en: Record<string, string> = {
   'suppliers.table.actions': 'ACTIONS',
   'suppliers.no_suppliers': 'No suppliers found',
   'suppliers.start_adding': 'Start by adding your first supplier.',
-  
+
   // Suppliers Create
   'suppliers.back': 'Back to Suppliers',
   'suppliers.create_title': 'Create New Supplier',
@@ -1094,6 +1096,40 @@ const en: Record<string, string> = {
   'brands.active_help': 'Active (Brand will be available for product selection)',
   'brands.update_btn': 'Update Brand',
   'brands.cancel': 'Cancel',
+
+  // Shop Profile
+  'shop.title': 'Shop Profile',
+  'shop.subtitle': 'Manage your shop information and settings',
+  'shop.logo': 'Shop Logo',
+  'shop.choose_file': 'Choose file',
+  'shop.no_file': 'No file chosen',
+  'shop.upload_help': 'Upload a logo for your shop (Max 2MB. JPG/PNG/GIF)',
+  'shop.shop_name': 'Shop Name',
+  'shop.owner_name': 'Owner Name',
+  'shop.email': 'Email',
+  'shop.mobile': 'Mobile Number',
+  'shop.address': 'Address',
+  'shop.gst': 'GST Number',
+  'shop.gst_placeholder': 'e.g., 27ABCDE1234F1Z5',
+  'shop.pan': 'PAN Number',
+  'shop.pan_placeholder': 'e.g., ABCDE1234F',
+  'shop.sub_info': 'Subscription Information',
+  'shop.sub_status': 'Status',
+  'shop.trial': 'Trial',
+  'shop.sub_plan': 'Plan',
+  'shop.sub_expires': 'Expires On',
+  'shop.cancel': 'Cancel',
+  'shop.update': 'Update Profile',
+
+  // My Shops
+  'shops.title': 'My Shops',
+  'shops.subtitle': 'Manage all your shops from one place',
+  'shops.add_new': 'Add New Shop',
+  'shops.active_shop': 'Active Shop',
+  'shops.trial_plan': 'Trial Plan',
+  'shops.trial': 'Trial',
+  'shops.expires': 'Expires:',
+  'shops.view_details': 'View Details',
 };
 
 export default en;

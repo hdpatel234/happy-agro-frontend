@@ -43,6 +43,8 @@ const gu: Record<string, string> = {
   'header.logout': 'લૉગ આઉટ',
 
   // Page Titles
+  'title.shops': 'મારી દુકાનો',
+  'title.shop_profile': 'દુકાન પ્રોફાઇલ',
   'title.pos': 'પોઈન્ટ ઓફ સેલ',
   'title.add_ledger_entry': 'ખાતા એન્ટ્રી ઉમેરો',
   'title.khata_book': 'ખાતા બુક - ગ્રાહકો અને સપ્લાયર્સ મેનેજ કરો',
@@ -1088,6 +1090,52 @@ const gu: Record<string, string> = {
   'wx.today': 'આજે',
   'wx.agri_tips': '🌾 કૃષિ ટિપ્સ',
   'wx.agri_tip_1': 'આજે વરસાદની અપેક્ષા છે — જંતુનાશક/ખાતરનો છંટકાવ કરવાનું ટાળો.',
+  
+  // Brands Edit
+  'brands.edit_brand': 'બ્રાન્ડ સંપાદિત કરો',
+  'brands.back_to_brands': 'બ્રાન્ડ્સ પર પાછા જાઓ',
+  'brands.brand_name': 'બ્રાન્ડનું નામ',
+  'brands.company_name': 'કંપનીનું નામ',
+  'brands.company_name_help': 'આ બ્રાન્ડની માલિકી ધરાવતી કંપનીનું સંપૂર્ણ કાનૂની નામ',
+  'brands.description': 'વર્ણન',
+  'brands.description_placeholder': 'બ્રાન્ડ વિશે વૈકલ્પિક વર્ણન',
+  'brands.active_help': 'સક્રિય (ઉત્પાદન પસંદગી માટે બ્રાન્ડ ઉપલબ્ધ રહેશે)',
+  'brands.update_btn': 'બ્રાન્ડ અપડેટ કરો',
+  'brands.cancel': 'રદ કરો',
+
+  // Shop Profile
+  'shop.title': 'દુકાન પ્રોફાઇલ',
+  'shop.subtitle': 'તમારી દુકાનની માહિતી અને સેટિંગ્સ સંચાલિત કરો',
+  'shop.logo': 'દુકાનનો લોગો',
+  'shop.choose_file': 'ફાઇલ પસંદ કરો',
+  'shop.no_file': 'કોઈ ફાઇલ પસંદ કરી નથી',
+  'shop.upload_help': 'તમારી દુકાન માટે લોગો અપલોડ કરો (મહત્તમ 2MB. JPG/PNG/GIF)',
+  'shop.shop_name': 'દુકાનનું નામ',
+  'shop.owner_name': 'માલિકનું નામ',
+  'shop.email': 'ઇમેઇલ',
+  'shop.mobile': 'મોબાઇલ નંબર',
+  'shop.address': 'સરનામું',
+  'shop.gst': 'જીએસટી નંબર',
+  'shop.gst_placeholder': 'દા.ત., 27ABCDE1234F1Z5',
+  'shop.pan': 'પાન નંબર',
+  'shop.pan_placeholder': 'દા.ત., ABCDE1234F',
+  'shop.sub_info': 'સબ્સ્ક્રિપ્શન માહિતી',
+  'shop.sub_status': 'સ્થિતિ',
+  'shop.trial': 'ટ્રાયલ',
+  'shop.sub_plan': 'પ્લાન',
+  'shop.sub_expires': 'સમાપ્તિ તારીખ',
+  'shop.cancel': 'રદ કરો',
+  'shop.update': 'પ્રોફાઇલ અપડેટ કરો',
+
+  // My Shops
+  'shops.title': 'મારી દુકાનો',
+  'shops.subtitle': 'તમારી બધી દુકાનોને એક જ જગ્યાએથી સંચાલિત કરો',
+  'shops.add_new': 'નવી દુકાન ઉમેરો',
+  'shops.active_shop': 'સક્રિય દુકાન',
+  'shops.trial_plan': 'ટ્રાયલ પ્લાન',
+  'shops.trial': 'ટ્રાયલ',
+  'shops.expires': 'સમાપ્તિ:',
+  'shops.view_details': 'વિગતો જુઓ',
 };
 
 export default gu;

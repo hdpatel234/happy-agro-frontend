@@ -91,6 +91,8 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
         if (pathname === '/reports') return t('title.reports_analytics');
         if (pathname === '/backup') return t('title.backup');
         if (pathname === '/subscriptions') return t('title.subscription_management');
+        if (pathname === '/shop/profile') return t('title.shop_profile') || 'Shop Profile';
+        if (pathname === '/shops') return t('title.shops') || 'My Shops';
         if (pathname === '/weather') return t('title.weather_dashboard');
         return t('title.owner_dashboard');
     };

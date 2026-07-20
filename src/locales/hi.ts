@@ -43,6 +43,8 @@ const hi: Record<string, string> = {
   'header.logout': 'लॉग आउट',
 
   // Page Titles
+  'title.shops': 'मेरी दुकानें',
+  'title.shop_profile': 'दुकान प्रोफ़ाइल',
   'title.pos': 'पॉइंट ऑफ सेल',
   'title.add_ledger_entry': 'खाता प्रविष्टि जोड़ें',
   'title.khata_book': 'खाता बुक - ग्राहक और आपूर्तिकर्ता प्रबंधित करें',
@@ -1088,6 +1090,52 @@ const hi: Record<string, string> = {
   'wx.today': 'आज',
   'wx.agri_tips': '🌾 कृषि सुझाव',
   'wx.agri_tip_1': 'आज बारिश की संभावना है — कीटनाशक/उर्वरक का छिड़काव करने से बचें।',
+  
+  // Brands Edit
+  'brands.edit_brand': 'ब्रांड संपादित करें',
+  'brands.back_to_brands': 'ब्रांड पर वापस जाएँ',
+  'brands.brand_name': 'ब्रांड का नाम',
+  'brands.company_name': 'कंपनी का नाम',
+  'brands.company_name_help': 'इस ब्रांड का स्वामित्व रखने वाली कंपनी का पूरा कानूनी नाम',
+  'brands.description': 'विवरण',
+  'brands.description_placeholder': 'ब्रांड के बारे में वैकल्पिक विवरण',
+  'brands.active_help': 'सक्रिय (उत्पाद चयन के लिए ब्रांड उपलब्ध होगा)',
+  'brands.update_btn': 'ब्रांड अपडेट करें',
+  'brands.cancel': 'रद्द करें',
+
+  // Shop Profile
+  'shop.title': 'दुकान प्रोफ़ाइल',
+  'shop.subtitle': 'अपनी दुकान की जानकारी और सेटिंग्स प्रबंधित करें',
+  'shop.logo': 'दुकान का लोगो',
+  'shop.choose_file': 'फ़ाइल चुनें',
+  'shop.no_file': 'कोई फ़ाइल नहीं चुनी गई',
+  'shop.upload_help': 'अपनी दुकान के लिए एक लोगो अपलोड करें (अधिकतम 2MB. JPG/PNG/GIF)',
+  'shop.shop_name': 'दुकान का नाम',
+  'shop.owner_name': 'मालिक का नाम',
+  'shop.email': 'ईमेल',
+  'shop.mobile': 'मोबाइल नंबर',
+  'shop.address': 'पता',
+  'shop.gst': 'जीएसटी नंबर',
+  'shop.gst_placeholder': 'उदा., 27ABCDE1234F1Z5',
+  'shop.pan': 'पैन नंबर',
+  'shop.pan_placeholder': 'उदा., ABCDE1234F',
+  'shop.sub_info': 'सदस्यता जानकारी',
+  'shop.sub_status': 'स्थिति',
+  'shop.trial': 'ट्रायल',
+  'shop.sub_plan': 'प्लान',
+  'shop.sub_expires': 'समाप्ति तिथि',
+  'shop.cancel': 'रद्द करें',
+  'shop.update': 'प्रोफ़ाइल अपडेट करें',
+
+  // My Shops
+  'shops.title': 'मेरी दुकानें',
+  'shops.subtitle': 'अपनी सभी दुकानों को एक ही स्थान से प्रबंधित करें',
+  'shops.add_new': 'नई दुकान जोड़ें',
+  'shops.active_shop': 'सक्रिय दुकान',
+  'shops.trial_plan': 'ट्रायल प्लान',
+  'shops.trial': 'ट्रायल',
+  'shops.expires': 'समाप्ति:',
+  'shops.view_details': 'विवरण देखें',
 };
 
 export default hi;
