@@ -2,9 +2,12 @@
 
 import React from 'react';
 import { Package, Layers, AlertTriangle, MinusCircle, Calendar, View, Box } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function StockOverviewPage() {
+  const { t } = useLanguage();
+
   return (
     <div className="so-container">
       {/* Top Stats Ribbon */}
@@ -14,9 +17,9 @@ export default function StockOverviewPage() {
             <Package size={24} color="white" />
           </div>
           <div className="so-stat-content">
-            <div className="so-stat-title">Total Products</div>
+            <div className="so-stat-title">{t('inventory.total_products')}</div>
             <div className="so-stat-value">1</div>
-            <div className="so-stat-sub">All Categories</div>
+            <div className="so-stat-sub">{t('inventory.all_categories')}</div>
           </div>
         </div>
 
@@ -25,9 +28,9 @@ export default function StockOverviewPage() {
             <Layers size={24} color="white" />
           </div>
           <div className="so-stat-content">
-            <div className="so-stat-title">Total Stock Qty</div>
+            <div className="so-stat-title">{t('inventory.total_stock_qty')}</div>
             <div className="so-stat-value">99</div>
-            <div className="so-stat-sub">All Units</div>
+            <div className="so-stat-sub">{t('inventory.all_units')}</div>
           </div>
         </div>
 
@@ -36,9 +39,9 @@ export default function StockOverviewPage() {
             <AlertTriangle size={24} color="white" />
           </div>
           <div className="so-stat-content">
-            <div className="so-stat-title">Low Stock Items</div>
+            <div className="so-stat-title">{t('inventory.low_stock_items')}</div>
             <div className="so-stat-value">0</div>
-            <div className="so-stat-sub">Need Attention</div>
+            <div className="so-stat-sub">{t('inventory.need_attention')}</div>
           </div>
         </div>
 
@@ -47,9 +50,9 @@ export default function StockOverviewPage() {
             <MinusCircle size={24} color="white" />
           </div>
           <div className="so-stat-content">
-            <div className="so-stat-title">Out of Stock</div>
+            <div className="so-stat-title">{t('inventory.out_of_stock')}</div>
             <div className="so-stat-value">0</div>
-            <div className="so-stat-sub">Restock Required</div>
+            <div className="so-stat-sub">{t('inventory.restock_required')}</div>
           </div>
         </div>
 
@@ -58,9 +61,9 @@ export default function StockOverviewPage() {
             <Calendar size={24} color="white" />
           </div>
           <div className="so-stat-content">
-            <div className="so-stat-title">Expiring Soon</div>
+            <div className="so-stat-title">{t('inventory.expiring_soon')}</div>
             <div className="so-stat-value">0</div>
-            <div className="so-stat-sub">Within 30 Days</div>
+            <div className="so-stat-sub">{t('inventory.within_30_days')}</div>
           </div>
         </div>
       </div>
@@ -68,14 +71,14 @@ export default function StockOverviewPage() {
       {/* Filter Chips */}
       <div className="so-filters-row">
         <div className="so-chips">
-          <button className="so-chip active-all">All</button>
-          <button className="so-chip outline-green">In Stock</button>
-          <button className="so-chip outline-orange">Low Stock</button>
-          <button className="so-chip outline-red">Out of Stock</button>
-          <button className="so-chip outline-blue">Expiring Soon</button>
+          <button className="so-chip active-all">{t('inventory.all')}</button>
+          <button className="so-chip outline-green">{t('inventory.in_stock')}</button>
+          <button className="so-chip outline-orange">{t('inventory.low_stock')}</button>
+          <button className="so-chip outline-red">{t('inventory.out_of_stock')}</button>
+          <button className="so-chip outline-blue">{t('inventory.expiring_soon')}</button>
         </div>
         <select className="so-filter-select">
-          <option>All Categories</option>
+          <option>{t('inventory.all_categories')}</option>
           <option>Other</option>
         </select>
       </div>
@@ -93,7 +96,7 @@ export default function StockOverviewPage() {
                   <Box size={20} className="folder-svg" />
                 </div>
                 <div className="so-folder-title">Other</div>
-                <div className="so-folder-count">1 Items</div>
+                <div className="so-folder-count">1 {t('inventory.items')}</div>
               </div>
               <div className="so-explorer-product">
                 <div className="so-product-icon"></div>
@@ -102,7 +105,7 @@ export default function StockOverviewPage() {
                   <div className="sp-variant">5kg</div>
                   <div className="sp-stock-row">
                     <span className="sp-stock">99 Box</span>
-                    <span className="sp-status">In Stock</span>
+                    <span className="sp-status">{t('inventory.in_stock')}</span>
                   </div>
                 </div>
               </div>
@@ -112,14 +115,14 @@ export default function StockOverviewPage() {
 
           {/* Category Stock Summary */}
           <div className="so-card">
-            <h3 className="so-card-title">Category Stock Summary</h3>
+            <h3 className="so-card-title">{t('inventory.category_stock_summary')}</h3>
             <div className="so-summary-list">
               <div className="so-summary-item">
                 <div className="so-summary-icon-small bg-green-light">O</div>
                 <div className="so-summary-details">
                   <div className="ss-top">
                     <span className="ss-name">Other</span>
-                    <span className="ss-qty">99 qty</span>
+                    <span className="ss-qty">99 {t('inventory.qty')}</span>
                   </div>
                   <div className="ss-bottom">
                     <div className="ss-progress-bar">
@@ -134,20 +137,20 @@ export default function StockOverviewPage() {
 
           {/* Recent Stock Overview Table */}
           <div className="so-card so-table-card">
-            <h3 className="so-card-title">Recent Stock Overview</h3>
+            <h3 className="so-card-title">{t('inventory.recent_stock_overview')}</h3>
             <div className="so-table-wrapper">
               <table className="so-table">
                 <thead>
                   <tr>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Stock</th>
-                    <th>Unit</th>
-                    <th>Price (₹)</th>
-                    <th>Stock Value (₹)</th>
-                    <th>Status</th>
-                    <th>Last Updated</th>
-                    <th>Action</th>
+                    <th>{t('inventory.table.product')}</th>
+                    <th>{t('inventory.table.category')}</th>
+                    <th>{t('inventory.table.current_stock')}</th>
+                    <th>{t('inventory.table.unit')}</th>
+                    <th>{t('inventory.table.price')}</th>
+                    <th>{t('inventory.table.stock_value')}</th>
+                    <th>{t('inventory.table.status')}</th>
+                    <th>{t('inventory.table.last_updated')}</th>
+                    <th>{t('inventory.table.action')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -166,15 +169,15 @@ export default function StockOverviewPage() {
                     <td>Box</td>
                     <td>100.00</td>
                     <td>9,900.00</td>
-                    <td><span className="st-status-badge text-green border-green">In Stock</span></td>
+                    <td><span className="st-status-badge text-green border-green">{t('inventory.in_stock')}</span></td>
                     <td className="text-muted">19 Jul 2026</td>
-                    <td><span className="st-action">View</span></td>
+                    <td><span className="st-action">{t('inventory.view')}</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="st-footer-link">
-              <a href="#">View Batch Stock</a>
+              <a href="#">{t('inventory.view_batch_stock')}</a>
             </div>
           </div>
 
@@ -185,22 +188,22 @@ export default function StockOverviewPage() {
           
           <div className="so-card">
             <div className="so-card-header">
-              <h3 className="so-card-title m-0">Low Stock Alerts</h3>
-              <a href="#" className="so-view-all">View All</a>
+              <h3 className="so-card-title m-0">{t('inventory.low_stock_alerts')}</h3>
+              <a href="#" className="so-view-all">{t('inventory.view_all')}</a>
             </div>
-            <div className="so-empty-state">No low stock alerts right now.</div>
+            <div className="so-empty-state">{t('inventory.no_low_stock_alerts_right_now')}</div>
           </div>
 
           <div className="so-card">
             <div className="so-card-header">
-              <h3 className="so-card-title m-0">Expiry Alerts <span className="text-muted text-sm fw-normal">(Within 30 Days)</span></h3>
-              <a href="#" className="so-view-all">View All</a>
+              <h3 className="so-card-title m-0">{t('inventory.expiry_alerts')} <span className="text-muted text-sm fw-normal">({t('inventory.within_30_days')})</span></h3>
+              <a href="#" className="so-view-all">{t('inventory.view_all')}</a>
             </div>
-            <div className="so-empty-state">No batches expiring in the next 30 days.</div>
+            <div className="so-empty-state">{t('inventory.no_batches_expiring')}</div>
           </div>
 
           <div className="so-card">
-            <h3 className="so-card-title">Stock Health</h3>
+            <h3 className="so-card-title">{t('inventory.stock_health')}</h3>
             <div className="so-health-wrapper">
               
               <div className="so-donut-container">
@@ -218,27 +221,27 @@ export default function StockOverviewPage() {
                   />
                 </svg>
                 <div className="donut-center-text">
-                  <span className="dc-label">Total</span>
+                  <span className="dc-label">{t('inventory.total')}</span>
                   <span className="dc-val">1</span>
-                  <span className="dc-label">Products</span>
+                  <span className="dc-label">{t('inventory.products')}</span>
                 </div>
               </div>
 
               <div className="so-health-legend">
                 <div className="shl-row">
-                  <div className="shl-left"><span className="shl-dot bg-green"></span> In Stock</div>
+                  <div className="shl-left"><span className="shl-dot bg-green"></span> {t('inventory.in_stock')}</div>
                   <div className="shl-right">1 (100%)</div>
                 </div>
                 <div className="shl-row">
-                  <div className="shl-left"><span className="shl-dot bg-orange"></span> Low Stock</div>
+                  <div className="shl-left"><span className="shl-dot bg-orange"></span> {t('inventory.low_stock')}</div>
                   <div className="shl-right">0 (0%)</div>
                 </div>
                 <div className="shl-row">
-                  <div className="shl-left"><span className="shl-dot bg-red"></span> Out of Stock</div>
+                  <div className="shl-left"><span className="shl-dot bg-red"></span> {t('inventory.out_of_stock')}</div>
                   <div className="shl-right">0 (0%)</div>
                 </div>
                 <div className="shl-row">
-                  <div className="shl-left"><span className="shl-dot bg-blue"></span> Expiring Soon</div>
+                  <div className="shl-left"><span className="shl-dot bg-blue"></span> {t('inventory.expiring_soon')}</div>
                   <div className="shl-right">0 (0%)</div>
                 </div>
               </div>
