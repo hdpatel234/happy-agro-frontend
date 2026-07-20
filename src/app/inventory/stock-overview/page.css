@@ -491,19 +491,28 @@
   .so-split-layout {
     grid-template-columns: 1fr;
   }
+  
+  .so-main-col, .so-side-col {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 768px) {
   .so-stats-ribbon {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
   
   .so-stat-card {
-    min-width: 220px;
-    flex: 0 0 auto;
+    min-width: 0;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  /* Make the 5th odd card full width */
+  .so-stat-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .so-filters-row {
@@ -515,6 +524,7 @@
   .so-chips {
     overflow-x: auto;
     padding-bottom: 8px;
+    flex-wrap: nowrap;
   }
 
   .so-chip {
@@ -522,6 +532,15 @@
   }
 
   .so-filter-select {
+    width: 100%;
+  }
+
+  .so-explorer-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .so-explorer-category, .so-explorer-product {
     width: 100%;
   }
 
