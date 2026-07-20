@@ -1066,7 +1066,7 @@ const hi: Record<string, string> = {
   'suppliers.table.actions': 'कार्य',
   'suppliers.no_suppliers': 'कोई सप्लायर नहीं मिला',
   'suppliers.start_adding': 'अपना पहला सप्लायर जोड़कर शुरुआत करें।',
-  
+
   // Suppliers Create
   'suppliers.back': 'सप्लायर्स पर वापस जाएँ',
   'suppliers.create_title': 'नया सप्लायर बनाएँ',
@@ -1091,15 +1091,9 @@ const hi: Record<string, string> = {
   'wx.today': 'आज',
   'wx.agri_tips': '🌾 कृषि सुझाव',
   'wx.agri_tip_1': 'आज बारिश की संभावना है — कीटनाशक/उर्वरक का छिड़काव करने से बचें।',
-  
+
   // Brands Edit
   'brands.edit_brand': 'ब्रांड संपादित करें',
-  'brands.back_to_brands': 'ब्रांड पर वापस जाएँ',
-  'brands.brand_name': 'ब्रांड का नाम',
-  'brands.company_name': 'कंपनी का नाम',
-  'brands.company_name_help': 'इस ब्रांड का स्वामित्व रखने वाली कंपनी का पूरा कानूनी नाम',
-  'brands.description': 'विवरण',
-  'brands.description_placeholder': 'ब्रांड के बारे में वैकल्पिक विवरण',
   'brands.active_help': 'सक्रिय (उत्पाद चयन के लिए ब्रांड उपलब्ध होगा)',
   'brands.update_btn': 'ब्रांड अपडेट करें',
   'brands.cancel': 'रद्द करें',

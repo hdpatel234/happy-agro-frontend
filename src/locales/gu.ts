@@ -1066,7 +1066,7 @@ const gu: Record<string, string> = {
   'suppliers.table.actions': 'ક્રિયા',
   'suppliers.no_suppliers': 'કોઈ સપ્લાયર્સ મળ્યા નથી',
   'suppliers.start_adding': 'તમારા પ્રથમ સપ્લાયરને ઉમેરીને શરૂઆત કરો.',
-  
+
   // Suppliers Create
   'suppliers.back': 'સપ્લાયર્સ પર પાછા જાઓ',
   'suppliers.create_title': 'નવો સપ્લાયર બનાવો',
@@ -1091,15 +1091,9 @@ const gu: Record<string, string> = {
   'wx.today': 'આજે',
   'wx.agri_tips': '🌾 કૃષિ ટિપ્સ',
   'wx.agri_tip_1': 'આજે વરસાદની અપેક્ષા છે — જંતુનાશક/ખાતરનો છંટકાવ કરવાનું ટાળો.',
-  
+
   // Brands Edit
   'brands.edit_brand': 'બ્રાન્ડ સંપાદિત કરો',
-  'brands.back_to_brands': 'બ્રાન્ડ્સ પર પાછા જાઓ',
-  'brands.brand_name': 'બ્રાન્ડનું નામ',
-  'brands.company_name': 'કંપનીનું નામ',
-  'brands.company_name_help': 'આ બ્રાન્ડની માલિકી ધરાવતી કંપનીનું સંપૂર્ણ કાનૂની નામ',
-  'brands.description': 'વર્ણન',
-  'brands.description_placeholder': 'બ્રાન્ડ વિશે વૈકલ્પિક વર્ણન',
   'brands.active_help': 'સક્રિય (ઉત્પાદન પસંદગી માટે બ્રાન્ડ ઉપલબ્ધ રહેશે)',
   'brands.update_btn': 'બ્રાન્ડ અપડેટ કરો',
   'brands.cancel': 'રદ કરો',

@@ -1092,6 +1092,7 @@ const en: Record<string, string> = {
   'wx.today': 'TODAY',
   'wx.agri_tips': '🌾 Agricultural Tips',
   'wx.agri_tip_1': 'Rain expected today — avoid pesticide/fertilizer spraying.',
+
   // Brands Edit
   'brands.edit_brand': 'Edit Brand',
   'brands.active_help': 'Active (Brand will be available for product selection)',
