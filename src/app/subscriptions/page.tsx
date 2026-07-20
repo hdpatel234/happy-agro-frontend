@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Check, X } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 // Reusable SVG Diamond Icon
@@ -29,6 +30,7 @@ interface PricingCardProps {
 }
 
 function PricingCard({ title, monthlyPrice, yearlyPrice, savings, features, isHighlighted = false }: PricingCardProps) {
+  const { t } = useLanguage();
   return (
     <div className={`sub-pricing-card ${isHighlighted ? 'sub-highlighted-card' : ''}`}>
       <div className="sub-pricing-header">
@@ -36,10 +38,10 @@ function PricingCard({ title, monthlyPrice, yearlyPrice, savings, features, isHi
         <h3 className="sub-pricing-title">{title}</h3>
         <div className="sub-pricing-amount">
           <span className="sub-price-lg">₹{monthlyPrice}</span>
-          <span className="sub-price-mo">/month</span>
+          <span className="sub-price-mo">{t('sub.month')}</span>
         </div>
         <p className="sub-pricing-yearly">
-          or ₹{yearlyPrice}/year <span className="sub-savings">Save {savings}</span>
+          or ₹{yearlyPrice}{t('sub.year')} <span className="sub-savings">{t('sub.save')} {savings}</span>
         </p>
       </div>
 
@@ -60,10 +62,10 @@ function PricingCard({ title, monthlyPrice, yearlyPrice, savings, features, isHi
 
       <div className="sub-pricing-actions">
         <button className="btn btn-green w-full mb-2 font-600">
-          Pay Online with Cashfree
+          {t('sub.pay_online')}
         </button>
         <button className="btn sub-btn-outline w-full">
-          Manual Bank / UPI Request
+          {t('sub.manual_bank')}
         </button>
       </div>
     </div>
@@ -71,6 +73,7 @@ function PricingCard({ title, monthlyPrice, yearlyPrice, savings, features, isHi
 }
 
 export default function SubscriptionsPage() {
+  const { t } = useLanguage();
   const commonFeatures = [
     { text: "1 user per shop", incSilver: true, incGold: false, incDiamond: false, incPlatinum: false }, // Will override dynamically
     { text: "Inventory Management", incSilver: true, incGold: true, incDiamond: true, incPlatinum: true },
@@ -86,39 +89,39 @@ export default function SubscriptionsPage() {
       {/* Header */}
       <div className="sub-header-flex">
         <div className="sub-header-left">
-          <h2 className="sub-title">Subscription Management</h2>
-          <p className="sub-subtitle">Manage your subscription plan and payments</p>
+          <h2 className="sub-title">{t('sub.title')}</h2>
+          <p className="sub-subtitle">{t('sub.subtitle')}</p>
         </div>
         <button className="btn sub-btn-blue">
-          View Transactions
+          {t('sub.view_transactions')}
         </button>
       </div>
 
       {/* Current Subscription Card */}
       <div className="sub-card mt-0">
         <div className="sub-card-header no-border">
-          <h4>Current Subscription</h4>
+          <h4>{t('sub.current_sub')}</h4>
         </div>
         <div className="sub-current-grid">
           <div className="sub-current-item">
-            <span className="sub-item-label">Plan</span>
+            <span className="sub-item-label">{t('sub.plan')}</span>
             <span className="sub-item-value">Trial Plan</span>
           </div>
           <div className="sub-current-item">
-            <span className="sub-item-label">Status</span>
+            <span className="sub-item-label">{t('sub.status')}</span>
             <span className="sub-badge-trial">Trial</span>
           </div>
           <div className="sub-current-item">
-            <span className="sub-item-label">Valid Until</span>
+            <span className="sub-item-label">{t('sub.valid_until')}</span>
             <span className="sub-item-value">Aug 02, 2026</span>
-            <span className="sub-item-alert">Expiring soon!</span>
+            <span className="sub-item-alert">{t('sub.expiring_soon')}</span>
           </div>
         </div>
         
         <div className="sub-divider"></div>
         
         <div className="sub-features-section">
-          <span className="sub-features-title">Your Current Plan Features</span>
+          <span className="sub-features-title">{t('sub.current_plan_features')}</span>
           <div className="sub-features-grid">
             <div className="sub-feat"><Check size={14} className="text-green-600"/> <span className="text-green-600">Inventory Management</span></div>
             <div className="sub-feat"><Check size={14} className="text-green-600"/> <span className="text-green-600">Billing & POS</span></div>
@@ -133,18 +136,18 @@ export default function SubscriptionsPage() {
       {/* All Shops - Subscription Status */}
       <div className="sub-card">
         <div className="sub-card-header">
-          <h4>All Shops - Subscription Status</h4>
+          <h4>{t('sub.all_shops')}</h4>
         </div>
         <div className="sub-table-wrapper">
           <table className="sub-table">
             <thead>
               <tr>
                 <th>#</th>
-                <th>SHOP NAME</th>
-                <th>PLAN</th>
-                <th>STATUS</th>
-                <th>VALID UNTIL</th>
-                <th>ACTION</th>
+                <th>{t('sub.table.shop_name')}</th>
+                <th>{t('sub.table.plan')}</th>
+                <th>{t('sub.table.status')}</th>
+                <th>{t('sub.table.valid_until')}</th>
+                <th>{t('sub.table.action')}</th>
               </tr>
             </thead>
             <tbody>
@@ -152,12 +155,12 @@ export default function SubscriptionsPage() {
                 <td>1</td>
                 <td>
                   <div className="sub-shop-name">Happy Agro</div>
-                  <div className="sub-shop-type text-green-600 font-500">Main Shop</div>
+                  <div className="sub-shop-type text-green-600 font-500">{t('sub.main_shop')}</div>
                 </td>
                 <td className="text-gray-800">Trial Plan</td>
                 <td><span className="sub-badge-trial-small">Trial</span></td>
-                <td>Aug 02, 2026 <span className="text-orange-500 font-500 ml-1">Expiring soon</span></td>
-                <td><span className="sub-badge-current text-green-600">Current</span></td>
+                <td>Aug 02, 2026 <span className="text-orange-500 font-500 ml-1">{t('sub.expiring_soon')}</span></td>
+                <td><span className="sub-badge-current text-green-600">{t('sub.current_badge')}</span></td>
               </tr>
             </tbody>
           </table>
@@ -167,8 +170,8 @@ export default function SubscriptionsPage() {
       {/* Choose Your Plan */}
       <div className="sub-plans-section">
         <div className="sub-plans-header">
-          <h2>Choose Your Plan</h2>
-          <p>Select the perfect plan for your business needs</p>
+          <h2>{t('sub.choose_plan')}</h2>
+          <p>{t('sub.choose_plan_sub')}</p>
         </div>
         
         <div className="sub-pricing-grid">
@@ -223,10 +226,10 @@ export default function SubscriptionsPage() {
       {/* Recent Transactions */}
       <div className="sub-card">
         <div className="sub-card-header">
-          <h4>Recent Transactions</h4>
+          <h4>{t('sub.recent_transactions')}</h4>
         </div>
         <div className="sub-empty-state">
-          <span>No transactions found</span>
+          <span>{t('sub.no_transactions')}</span>
         </div>
       </div>
 
