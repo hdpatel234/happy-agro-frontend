@@ -1,0 +1,154 @@
+.eex-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+
+.eex-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 48px;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eex-back-link {
+  color: var(--accent-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.eex-back-link:hover {
+  text-decoration: underline;
+}
+
+.eex-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.eex-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.eex-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eex-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.eex-input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  color: var(--text-primary);
+  background-color: white;
+}
+
+.eex-input:focus, .eex-textarea:focus {
+  border-color: var(--accent-green);
+}
+
+.eex-textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  color: var(--text-primary);
+  background-color: white;
+  resize: vertical;
+}
+
+.text-red {
+  color: #ef4444;
+}
+
+.mt-24 { margin-top: 24px; }
+.mt-16 { margin-top: 16px; }
+
+.eex-helper-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Input Wrapper for Currency Symbol */
+.eex-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.eex-currency-symbol {
+  position: absolute;
+  left: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.eex-input-with-symbol {
+  padding-left: 36px;
+}
+
+/* Footer Actions */
+.eex-footer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.eex-action-btn {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-green {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+}
+
+.btn-green:hover {
+  background-color: #15803d;
+}
+
+.eex-btn-gray {
+  background-color: #e2e8f0;
+  color: var(--text-primary);
+  border: none;
+}
+
+.eex-btn-gray:hover {
+  background-color: #cbd5e1;
+}

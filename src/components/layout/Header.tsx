@@ -77,7 +77,18 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
     if (pathname.match(/^\/staff\/[^\/]+$/)) return 'Staff Details';
     if (pathname === '/staff') return 'Staff Management';
     if (pathname === '/expenses/create') return 'Add Expense';
+    if (pathname.match(/^\/expenses\/[^\/]+\/edit$/)) return 'Edit Expense';
     if (pathname === '/expenses') return 'Expenses';
+    if (pathname === '/reports/sales') return 'Sales Report';
+    if (pathname === '/reports/purchases') return 'Purchase Report';
+    if (pathname === '/reports/profit-loss') return 'Profit & Loss Report';
+    if (pathname === '/reports/stock') return 'Stock Report';
+    if (pathname === '/reports/credit') return 'Credit (Udhar) Report';
+    if (pathname === '/reports/sales-credit') return 'Sales Credit Report';
+    if (pathname === '/reports') return 'Reports & Analytics';
+    if (pathname === '/backup') return 'Backup';
+    if (pathname === '/subscriptions') return 'Subscription Management';
+    if (pathname === '/weather') return 'Weather Dashboard';
     return 'Owner Dashboard';
   };
 
@@ -110,7 +121,6 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
               <div className="dropdown-item active">English</div>
               <div className="dropdown-item">हिंदी</div>
               <div className="dropdown-item">ગુજરાતી</div>
-              <div className="dropdown-item">मराठी</div>
             </div>
           )}
         </div>

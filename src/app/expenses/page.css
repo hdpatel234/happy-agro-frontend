@@ -208,3 +208,61 @@
   color: var(--text-muted);
   margin: 0;
 }
+
+/* Populated Row Styles */
+.exp-date-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.exp-date-day {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.exp-category-badge {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.exp-amount {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.exp-action-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.icon-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.text-blue {
+  color: #3b82f6;
+}
+
+.text-red {
+  color: #ef4444;
+}

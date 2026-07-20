@@ -139,11 +139,11 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
             <Receipt size={18} />
             <span>Expenses</span>
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="/reports" className={getNavClass('/reports')}>
             <BarChart3 size={18} />
             <span>Reports</span>
           </Link>
-          <Link href="#" className="nav-item">
+          <Link href="/backup" className={getNavClass('/backup')}>
             <Save size={18} />
             <span>Backup</span>
           </Link>
@@ -151,7 +151,7 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
         <div className="nav-section">
           <h3>SETTINGS</h3>
-          <Link href="#" className="nav-item">
+          <Link href="/subscriptions" className={getNavClass('/subscriptions')}>
             <CreditCard size={18} />
             <span>Subscription</span>
           </Link>
@@ -159,7 +159,7 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
 
         <div className="nav-section">
           <h3>WEATHER</h3>
-          <Link href="#" className="nav-item">
+          <Link href="/weather" className={getNavClass('/weather')}>
             <CloudSun size={18} />
             <span>Weather Dashboard</span>
           </Link>
