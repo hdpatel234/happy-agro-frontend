@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function CreateProductPage() {
+  const { t } = useLanguage();
   const [variants, setVariants] = useState([{ id: 1 }]);
 
   const addVariant = () => {
@@ -21,117 +23,117 @@ export default function CreateProductPage() {
     <div className="product-create-container">
       <div className="pc-card">
         <Link href="/products" className="pc-back-link">
-          &larr; Back to Products
+          &larr; {t('products.back_to_products')}
         </Link>
         
-        <h2 className="pc-title">Create New Product</h2>
+        <h2 className="pc-title">{t('products.create_new')}</h2>
         
         <form className="pc-form">
           <div className="pc-two-col-grid">
             <div className="pc-field-group">
-              <label className="pc-label">Product Name <span className="text-danger">*</span></label>
+              <label className="pc-label">{t('products.product_name')} <span className="text-danger">*</span></label>
               <input type="text" className="pc-input" />
             </div>
             <div className="pc-field-group">
-              <label className="pc-label">Parent Category</label>
+              <label className="pc-label">{t('products.parent_category')}</label>
               <select className="pc-select">
-                <option>Select Parent Category</option>
+                <option>{t('products.select_parent_category')}</option>
               </select>
             </div>
           </div>
 
           <div className="pc-two-col-grid">
             <div className="pc-field-group">
-              <label className="pc-label">Category</label>
+              <label className="pc-label">{t('products.category')}</label>
               <select className="pc-select">
-                <option>Select Category</option>
+                <option>{t('products.select_category')}</option>
               </select>
-              <span className="pc-helper-link">Don't see your category? <Link href="/categories/create">Add New Category</Link></span>
+              <span className="pc-helper-link">{t('products.add_new_category_prompt')} <Link href="/categories/create">{t('products.add_new_category')}</Link></span>
             </div>
             <div className="pc-field-group">
-              <label className="pc-label">Brand / Company</label>
+              <label className="pc-label">{t('products.brand_company')}</label>
               <select className="pc-select">
-                <option>Select Brand</option>
+                <option>{t('products.select_brand')}</option>
               </select>
-              <span className="pc-helper-link">Don't see your brand? <Link href="/brands/create">Add New Brand</Link></span>
+              <span className="pc-helper-link">{t('products.add_new_brand_prompt')} <Link href="/brands/create">{t('products.add_new_brand')}</Link></span>
             </div>
           </div>
 
           <div className="pc-field-group">
-            <label className="pc-label">Tax Master <span className="text-danger">*</span></label>
+            <label className="pc-label">{t('products.tax_master')} <span className="text-danger">*</span></label>
             <select className="pc-select w-50">
-              <option>Select Tax Master</option>
+              <option>{t('products.select_tax_master')}</option>
             </select>
-            <p className="pc-help-text">Select a tax master to auto-apply GST % and tax type.</p>
+            <p className="pc-help-text">{t('products.tax_master_help')}</p>
           </div>
 
           <div className="pc-field-group">
-            <label className="pc-label">Description</label>
+            <label className="pc-label">{t('products.description')}</label>
             <textarea className="pc-textarea" rows={4}></textarea>
           </div>
 
           <div className="pc-checkbox-group">
             <input type="checkbox" id="activeCheckbox" defaultChecked className="pc-checkbox" />
-            <label htmlFor="activeCheckbox" className="pc-checkbox-label">Active</label>
+            <label htmlFor="activeCheckbox" className="pc-checkbox-label">{t('products.active')}</label>
           </div>
 
           <div className="pc-variants-section">
             <div className="pc-variants-header">
-              <h3 className="pc-variants-title">Product Variants / Packing Sizes</h3>
-              <p className="pc-variants-subtitle">Add different sizes, packs, or variations of this product</p>
+              <h3 className="pc-variants-title">{t('products.variants_title')}</h3>
+              <p className="pc-variants-subtitle">{t('products.variants_subtitle')}</p>
             </div>
 
             {variants.map((variant, index) => (
               <div key={variant.id} className="pc-variant-card">
                 <div className="pc-variant-card-header">
-                  <h4>Variant {index + 1}</h4>
+                  <h4>{t('products.variant')} {index + 1}</h4>
                   <button 
                     type="button" 
                     className="pc-remove-variant-btn" 
                     onClick={() => removeVariant(variant.id)}
                     disabled={variants.length === 1}
                   >
-                    Remove
+                    {t('products.remove')}
                   </button>
                 </div>
 
                 <div className="pc-four-col-grid">
                   <div className="pc-field-group">
-                    <label className="pc-label">Packing / Size <span className="text-danger">*</span></label>
-                    <input type="text" className="pc-input" placeholder="e.g., 1kg, 5kg, 10kg" />
+                    <label className="pc-label">{t('products.packing_size')} <span className="text-danger">*</span></label>
+                    <input type="text" className="pc-input" placeholder={t('products.packing_size_placeholder')} />
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">SKU</label>
+                    <label className="pc-label">{t('products.table.sku')}</label>
                     <input type="text" className="pc-input" />
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">Unit</label>
+                    <label className="pc-label">{t('products.unit')}</label>
                     <select className="pc-select">
-                      <option>Select Unit</option>
+                      <option>{t('products.select_unit')}</option>
                     </select>
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">Barcode</label>
+                    <label className="pc-label">{t('products.barcode')}</label>
                     <input type="text" className="pc-input" />
                   </div>
                 </div>
 
                 <div className="pc-four-col-grid mt-3">
                   <div className="pc-field-group">
-                    <label className="pc-label">Cost Price <span className="text-danger">*</span></label>
+                    <label className="pc-label">{t('products.cost_price')} <span className="text-danger">*</span></label>
                     <input type="text" className="pc-input" />
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">Selling Price <span className="text-danger">*</span></label>
+                    <label className="pc-label">{t('products.selling_price')} <span className="text-danger">*</span></label>
                     <input type="text" className="pc-input" />
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">Opening Stock Quantity <span className="text-danger">*</span></label>
+                    <label className="pc-label">{t('products.opening_stock')} <span className="text-danger">*</span></label>
                     <input type="text" className="pc-input" />
-                    <p className="pc-help-text-small">Opening stock ke liye system automatic No Expiry batch create karega. Batch/Expiry ke saath stock add karne ke liye Purchase ya Stock Adjustment use karein.</p>
+                    <p className="pc-help-text-small">{t('products.opening_stock_help')}</p>
                   </div>
                   <div className="pc-field-group">
-                    <label className="pc-label">Low Stock Threshold</label>
+                    <label className="pc-label">{t('products.low_stock_threshold')}</label>
                     <input type="text" className="pc-input" defaultValue="10" />
                   </div>
                 </div>
@@ -139,14 +141,14 @@ export default function CreateProductPage() {
                 <div className="pc-variant-footer">
                   <div className="pc-variant-radios">
                     <label className="pc-radio-label">
-                      <input type="radio" name="defaultVariant" defaultChecked={index === 0} /> Default
+                      <input type="radio" name="defaultVariant" defaultChecked={index === 0} /> {t('products.default')}
                     </label>
                     <label className="pc-radio-label">
-                      <input type="checkbox" defaultChecked /> Active
+                      <input type="checkbox" defaultChecked /> {t('products.active')}
                     </label>
                   </div>
                   <button type="button" className="btn btn-blue" onClick={addVariant}>
-                    + Add Variant
+                    {t('products.add_variant')}
                   </button>
                 </div>
               </div>
@@ -154,12 +156,12 @@ export default function CreateProductPage() {
           </div>
 
           <div className="pc-info-note">
-            <strong>Note:</strong> If you add variants, the main product fields above will be used as default values. Each variant can have its own price, stock, and SKU. Leave empty if product has no variants.
+            <strong>{t('products.note')}</strong> {t('products.note_text')}
           </div>
 
           <div className="pc-actions">
-            <button type="button" className="btn btn-primary pc-submit-btn">Create Product</button>
-            <Link href="/products" className="btn btn-outline pc-cancel-btn">Cancel</Link>
+            <button type="button" className="btn btn-primary pc-submit-btn">{t('products.create_btn')}</button>
+            <Link href="/products" className="btn btn-outline pc-cancel-btn">{t('products.cancel')}</Link>
           </div>
         </form>
       </div>
