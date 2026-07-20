@@ -1091,12 +1091,6 @@ const en: Record<string, string> = {
   'wx.agri_tip_1': 'Rain expected today — avoid pesticide/fertilizer spraying.',
   // Brands Edit
   'brands.edit_brand': 'Edit Brand',
-  'brands.back_to_brands': 'Back to Brands',
-  'brands.brand_name': 'Brand Name',
-  'brands.company_name': 'Company Name',
-  'brands.company_name_help': 'The full legal name of the company that owns this brand',
-  'brands.description': 'Description',
-  'brands.description_placeholder': 'Optional description about the brand',
   'brands.active_help': 'Active (Brand will be available for product selection)',
   'brands.update_btn': 'Update Brand',
   'brands.cancel': 'Cancel',
