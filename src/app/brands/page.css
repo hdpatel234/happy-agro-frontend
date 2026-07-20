@@ -76,7 +76,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .brands-table {
@@ -200,3 +200,31 @@
   background-color: #475569;
   font-weight: 600;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .brands-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .brands-filter-bar {
+    flex-wrap: wrap;
+  }
+
+  .brands-search-input,
+  .brands-status-select,
+  .filter-btn,
+  .clear-btn {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .brands-pagination-footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
