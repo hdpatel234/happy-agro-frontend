@@ -280,6 +280,12 @@
     align-items: flex-start;
     gap: 16px;
   }
+  .wx-search-section {
+    width: 100%;
+  }
+  .wx-search-input {
+    flex: 1;
+  }
   .wx-hero-card {
     flex-direction: column;
     align-items: flex-start;
@@ -291,6 +297,18 @@
   .wx-forecast-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .wx-search-section {
+    flex-direction: column;
+    width: 100%;
+  }
+  .wx-search-input {
+    width: 100%;
+  }
+  .wx-btn-search,
+  .wx-btn-location {
+    width: 100%;
+    justify-content: center;
+  }
 }
 @media (max-width: 480px) {
   .wx-forecast-grid {
@@ -298,5 +316,10 @@
   }
   .wx-hero-stats {
     grid-template-columns: 1fr;
+  }
+  .wx-hero-main-temp {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
