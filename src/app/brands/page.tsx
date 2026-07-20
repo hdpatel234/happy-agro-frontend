@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 const initialBrandsData = [
@@ -33,6 +34,7 @@ export default function BrandsPage() {
   const [brands, setBrands] = useState(initialBrandsData);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [brandToDelete, setBrandToDelete] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const handleDeleteClick = (index: number) => {
     setBrandToDelete(index);
@@ -58,35 +60,35 @@ export default function BrandsPage() {
     <div className="brands-container">
       <div className="brands-header">
         <div className="brands-title-section">
-          <h2 className="brands-title">Brands</h2>
-          <p className="brands-subtitle">Manage product brands and companies</p>
+          <h2 className="brands-title">{t('brands.title')}</h2>
+          <p className="brands-subtitle">{t('brands.subtitle')}</p>
         </div>
         <Link href="/brands/create" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Plus size={18} />
-          <span>Add Brand</span>
+          <span>{t('brands.add_brand')}</span>
         </Link>
       </div>
 
       <div className="brands-filter-bar">
-        <input type="text" className="brands-search-input" placeholder="Search brands..." />
+        <input type="text" className="brands-search-input" placeholder={t('brands.search_placeholder')} />
         <select className="brands-status-select">
-          <option>All Status</option>
-          <option>Active</option>
-          <option>Inactive</option>
+          <option>{t('brands.all_status')}</option>
+          <option>{t('brands.active')}</option>
+          <option>{t('brands.inactive')}</option>
         </select>
-        <button className="btn btn-primary filter-btn">Filter</button>
-        <button className="btn btn-outline clear-btn">Clear</button>
+        <button className="btn btn-primary filter-btn">{t('brands.filter')}</button>
+        <button className="btn btn-outline clear-btn">{t('brands.clear')}</button>
       </div>
 
       <div className="brands-table-container">
         <table className="brands-table">
           <thead>
             <tr>
-              <th>BRAND NAME</th>
-              <th>COMPANY NAME</th>
-              <th>PRODUCTS</th>
-              <th>STATUS</th>
-              <th className="text-right">ACTIONS</th>
+              <th>{t('brands.table.brand_name')}</th>
+              <th>{t('brands.table.company_name')}</th>
+              <th>{t('brands.table.products')}</th>
+              <th>{t('brands.table.status')}</th>
+              <th className="text-right">{t('brands.table.actions')}</th>
             </tr>
           </thead>
           <tbody>
@@ -95,16 +97,16 @@ export default function BrandsPage() {
                 <td className="fw-600">{brand.name}</td>
                 <td className="text-muted">{brand.company}</td>
                 <td>
-                  <span className="brand-product-pill">{brand.products} product(s)</span>
+                  <span className="brand-product-pill">{brand.products} {t('brands.product_count')}</span>
                 </td>
                 <td>
                   {brand.status === 'Active' && (
-                    <span className="brand-badge-active">Active</span>
+                    <span className="brand-badge-active">{t('brands.active')}</span>
                   )}
                 </td>
                 <td className="text-right brand-actions">
-                  <button className="brand-action-btn edit">Edit</button>
-                  <button className="brand-action-btn delete" onClick={() => handleDeleteClick(index)}>Delete</button>
+                  <button className="brand-action-btn edit">{t('brands.edit')}</button>
+                  <button className="brand-action-btn delete" onClick={() => handleDeleteClick(index)}>{t('brands.delete')}</button>
                 </td>
               </tr>
             ))}
@@ -114,7 +116,7 @@ export default function BrandsPage() {
 
       <div className="brands-pagination-footer">
         <div className="brands-pagination-info">
-          Showing 1 to {Math.min(20, brands.length)} of {brands.length > 20 ? 34 : brands.length} results
+          {t('brands.showing')} 1 {t('brands.to')} {Math.min(20, brands.length)} {t('brands.of')} {brands.length > 20 ? 34 : brands.length} {t('brands.results')}
         </div>
         <div className="brands-pagination-controls">
           <button className="brands-page-btn"><ChevronLeft size={16} /></button>
@@ -127,9 +129,9 @@ export default function BrandsPage() {
       <Modal 
         isOpen={isDeleteModalOpen}
         type="confirm"
-        title="Delete Brand"
-        message="Are you sure you want to delete this brand? This action cannot be undone."
-        confirmText="Delete"
+        title={t('brands.delete_modal_title')}
+        message={t('brands.delete_modal_message')}
+        confirmText={t('brands.delete_modal_confirm')}
         onConfirm={confirmDelete}
         onCancel={cancelDelete}
       />
