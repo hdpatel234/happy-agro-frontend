@@ -45,6 +45,7 @@ const en: Record<string, string> = {
   // Page Titles
   'title.shops': 'My Shops',
   'title.shop_profile': 'Shop Profile',
+  'title.notifications': 'Notifications',
   'title.pos': 'Point of Sale',
   'title.add_ledger_entry': 'Add Ledger Entry',
   'title.khata_book': 'Khata Book - Manage Customers & Suppliers',
@@ -1130,6 +1131,14 @@ const en: Record<string, string> = {
   'shops.trial': 'Trial',
   'shops.expires': 'Expires:',
   'shops.view_details': 'View Details',
+
+  // Notifications
+  'notif.title': 'Notifications',
+  'notif.subtitle': 'View all your notifications',
+  'notif.mark_all_read': 'Mark All as Read',
+  'notif.delete_all': 'Delete All',
+  'notif.empty_title': 'No notifications',
+  'notif.empty_desc': "You don't have any notifications yet.",
 };
 
 export default en;

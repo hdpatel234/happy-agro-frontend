@@ -45,6 +45,7 @@ const hi: Record<string, string> = {
   // Page Titles
   'title.shops': 'मेरी दुकानें',
   'title.shop_profile': 'दुकान प्रोफ़ाइल',
+  'title.notifications': 'सूचनाएँ',
   'title.pos': 'पॉइंट ऑफ सेल',
   'title.add_ledger_entry': 'खाता प्रविष्टि जोड़ें',
   'title.khata_book': 'खाता बुक - ग्राहक और आपूर्तिकर्ता प्रबंधित करें',
@@ -1136,6 +1137,14 @@ const hi: Record<string, string> = {
   'shops.trial': 'ट्रायल',
   'shops.expires': 'समाप्ति:',
   'shops.view_details': 'विवरण देखें',
+
+  // Notifications
+  'notif.title': 'सूचनाएँ',
+  'notif.subtitle': 'अपनी सभी सूचनाएँ देखें',
+  'notif.mark_all_read': 'सभी को पढ़ा हुआ मानें',
+  'notif.delete_all': 'सभी हटाएँ',
+  'notif.empty_title': 'कोई सूचना नहीं',
+  'notif.empty_desc': 'आपके पास अभी तक कोई सूचना नहीं है।',
 };
 
 export default hi;

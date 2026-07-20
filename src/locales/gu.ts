@@ -45,6 +45,7 @@ const gu: Record<string, string> = {
   // Page Titles
   'title.shops': 'મારી દુકાનો',
   'title.shop_profile': 'દુકાન પ્રોફાઇલ',
+  'title.notifications': 'સૂચનાઓ',
   'title.pos': 'પોઈન્ટ ઓફ સેલ',
   'title.add_ledger_entry': 'ખાતા એન્ટ્રી ઉમેરો',
   'title.khata_book': 'ખાતા બુક - ગ્રાહકો અને સપ્લાયર્સ મેનેજ કરો',
@@ -1136,6 +1137,14 @@ const gu: Record<string, string> = {
   'shops.trial': 'ટ્રાયલ',
   'shops.expires': 'સમાપ્તિ:',
   'shops.view_details': 'વિગતો જુઓ',
+
+  // Notifications
+  'notif.title': 'સૂચનાઓ',
+  'notif.subtitle': 'તમારી બધી સૂચનાઓ જુઓ',
+  'notif.mark_all_read': 'બધાને વાંચેલા તરીકે ચિહ્નિત કરો',
+  'notif.delete_all': 'બધા કાઢી નાખો',
+  'notif.empty_title': 'કોઈ સૂચનાઓ નથી',
+  'notif.empty_desc': 'તમારી પાસે હજી સુધી કોઈ સૂચનાઓ નથી.',
 };
 
 export default gu;

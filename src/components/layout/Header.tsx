@@ -93,6 +93,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
         if (pathname === '/subscriptions') return t('title.subscription_management');
         if (pathname === '/shop/profile') return t('title.shop_profile') || 'Shop Profile';
         if (pathname === '/shops') return t('title.shops') || 'My Shops';
+        if (pathname === '/notifications') return t('title.notifications') || 'Notifications';
         if (pathname === '/weather') return t('title.weather_dashboard');
         return t('title.owner_dashboard');
     };
@@ -161,10 +162,10 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
                                 <Building2 size={16} className="item-icon" />
                                 <span>{t('header.shop_profile')}</span>
                             </div>
-                            <div className="dropdown-item">
+                            {/* <div className="dropdown-item">
                                 <Settings size={16} className="item-icon" />
                                 <span>{t('header.settings')}</span>
-                            </div>
+                            </div> */}
                             <div className="dropdown-item">
                                 <Building2 size={16} className="item-icon" />
                                 <span>{t('header.shop_list')}</span>

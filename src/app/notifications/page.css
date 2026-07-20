@@ -1,0 +1,122 @@
+.notif-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+/* Header */
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.notif-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notif-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.notif-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.notif-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notif-btn-action {
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+}
+
+.notif-btn-danger {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.notif-btn-danger:hover {
+  background-color: #dc2626;
+}
+
+/* Card */
+.notif-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 64px 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty State */
+.notif-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.notif-empty-icon {
+  color: #94a3b8;
+  margin-bottom: 8px;
+  stroke-width: 1.5px;
+}
+
+.notif-empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.notif-empty-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notif-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .notif-header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .notif-btn-action, .notif-btn-danger {
+    width: 100%;
+    justify-content: center;
+  }
+  .notif-card {
+    padding: 48px 24px;
+  }
+}
