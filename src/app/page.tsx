@@ -7,6 +7,7 @@ import {
   Banknote, TrendingUp, FileText, IndianRupee,
   Users, Package, AlertTriangle, Plus, CheckSquare, BookOpen, ShoppingCart, BarChart
 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 const chartData = [
@@ -20,6 +21,8 @@ const chartData = [
 ];
 
 export default function Dashboard() {
+  const { t } = useLanguage();
+
   return (
     <div className="dashboard-container">
       
@@ -27,37 +30,37 @@ export default function Dashboard() {
       <div className="control-center-card">
         <div className="control-header">
           <div className="control-title">
-            <h3>Happy Agro Control Center</h3>
-            <p>Live sales, purchase, stock, credit, and profit signals for the active shop.</p>
+            <h3>{t('dashboard.control_center')}</h3>
+            <p>{t('dashboard.control_center_desc')}</p>
           </div>
           <div className="control-actions">
-            <button className="btn btn-primary">New Bill</button>
-            <button className="btn btn-outline">Profit Report</button>
-            <button className="btn btn-outline">Low Stock</button>
-            <button className="btn btn-blue">Child Shops Summary</button>
+            <button className="btn btn-primary">{t('dashboard.new_bill')}</button>
+            <button className="btn btn-outline">{t('dashboard.profit_report')}</button>
+            <button className="btn btn-outline">{t('dashboard.low_stock')}</button>
+            <button className="btn btn-blue">{t('dashboard.child_shops_summary')}</button>
           </div>
         </div>
         
         <div className="top-stats-grid">
           <div className="top-stat-item">
-            <span className="top-stat-label">TODAY</span>
+            <span className="top-stat-label">{t('dashboard.today')}</span>
             <span className="top-stat-val">INR 0</span>
-            <span className="top-stat-sub">0% vs yesterday</span>
+            <span className="top-stat-sub">{t('dashboard.vs_yesterday')}</span>
           </div>
           <div className="top-stat-item">
-            <span className="top-stat-label">THIS MONTH</span>
+            <span className="top-stat-label">{t('dashboard.this_month')}</span>
             <span className="top-stat-val">INR 0</span>
             <span className="top-stat-sub">0% vs last month</span>
           </div>
           <div className="top-stat-item">
-            <span className="top-stat-label">PENDING CREDIT</span>
+            <span className="top-stat-label">{t('dashboard.pending_credit')}</span>
             <span className="top-stat-val">INR 0</span>
-            <span className="top-stat-sub">Khata amount to collect</span>
+            <span className="top-stat-sub">{t('dashboard.khata_amount_to_collect')}</span>
           </div>
           <div className="top-stat-item">
-            <span className="top-stat-label">NET MARGIN</span>
+            <span className="top-stat-label">{t('dashboard.net_margin')}</span>
             <span className="top-stat-val">0.0%</span>
-            <span className="top-stat-sub">Profit INR 0</span>
+            <span className="top-stat-sub">{t('dashboard.profit_inr')}</span>
           </div>
         </div>
       </div>
@@ -65,9 +68,9 @@ export default function Dashboard() {
       {/* Main Stats Grid */}
       <div className="main-stats-grid">
         <StatCard 
-          title="Today's Sales" 
+          title={t('dashboard.todays_sales')} 
           value="INR 0.00" 
-          subtitle="0% vs yesterday"
+          subtitle={t('dashboard.vs_yesterday')}
           icon={<Banknote size={20} />}
           iconBg="#d1fae5"
           iconColor="#059669"
@@ -75,9 +78,9 @@ export default function Dashboard() {
           progressColor="#059669"
         />
         <StatCard 
-          title="Total Sales" 
+          title={t('dashboard.total_sales')} 
           value="INR 0.00" 
-          subtitle="This Month INR 0.00"
+          subtitle={t('dashboard.this_month_inr')}
           icon={<TrendingUp size={20} />}
           iconBg="#dbeafe"
           iconColor="#2563eb"
@@ -85,9 +88,9 @@ export default function Dashboard() {
           progressColor="#2563eb"
         />
         <StatCard 
-          title="Pending Payments" 
+          title={t('dashboard.pending_payments')} 
           value="INR 0.00" 
-          subtitle="Credit (Udhar) Amount"
+          subtitle={t('dashboard.credit_amount')}
           icon={<FileText size={20} />}
           iconBg="#fef3c7"
           iconColor="#d97706"
@@ -95,9 +98,9 @@ export default function Dashboard() {
           progressColor="#d97706"
         />
         <StatCard 
-          title="Total Profit" 
+          title={t('dashboard.total_profit')} 
           value="INR 0.00" 
-          subtitle="Margin: 0.0%"
+          subtitle={t('dashboard.margin')}
           icon={<IndianRupee size={20} />}
           iconBg="#f3e8ff"
           iconColor="#9333ea"
@@ -105,9 +108,9 @@ export default function Dashboard() {
           progressColor="#9333ea"
         />
         <StatCard 
-          title="Total Customers" 
+          title={t('dashboard.total_customers')} 
           value="0" 
-          subtitle="Active customer base"
+          subtitle={t('dashboard.active_customer_base')}
           icon={<Users size={20} />}
           iconBg="#e0e7ff"
           iconColor="#4f46e5"
@@ -115,9 +118,9 @@ export default function Dashboard() {
           progressColor="#4f46e5"
         />
         <StatCard 
-          title="Total Products" 
+          title={t('dashboard.total_products')} 
           value="0" 
-          subtitle="Stock looks healthy"
+          subtitle={t('dashboard.stock_looks_healthy')}
           icon={<Package size={20} />}
           iconBg="#ccfbf1"
           iconColor="#0d9488"
@@ -125,9 +128,9 @@ export default function Dashboard() {
           progressColor="#0d9488"
         />
         <StatCard 
-          title="This Month Purchases" 
+          title={t('dashboard.this_month_purchases')} 
           value="INR 0.00" 
-          subtitle="Last month INR 0.00"
+          subtitle={t('dashboard.last_month_inr')}
           icon={<ShoppingCart size={20} />}
           iconBg="#ffe4e6"
           iconColor="#e11d48"
@@ -135,9 +138,9 @@ export default function Dashboard() {
           progressColor="#e11d48"
         />
         <StatCard 
-          title="Inventory Risk" 
+          title={t('dashboard.inventory_risk')} 
           value="0" 
-          subtitle="0 Expiring Soon, 0 expired"
+          subtitle={t('dashboard.expiring_soon')}
           icon={<AlertTriangle size={20} />}
           iconBg="#ffedd5"
           iconColor="#ea580c"
@@ -151,13 +154,13 @@ export default function Dashboard() {
           <div className="card">
             <div className="control-header" style={{ marginBottom: '16px' }}>
               <div>
-                <h3 className="card-title">7-Day Business Chart</h3>
-                <p className="card-subtitle">Sales, purchases, and expenses by day</p>
+                <h3 className="card-title">{t('dashboard.7day_chart')}</h3>
+                <p className="card-subtitle">{t('dashboard.7day_chart_desc')}</p>
               </div>
               <div className="flex gap-4 text-xs font-semibold">
-                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#10b981'}}></span> Sales</span>
-                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#3b82f6'}}></span> Purchases</span>
-                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#ef4444'}}></span> Expenses</span>
+                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#10b981'}}></span> {t('dashboard.sales')}</span>
+                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#3b82f6'}}></span> {t('sidebar.purchases')}</span>
+                <span className="flex items-center gap-2"><span className="badge" style={{position:'static', backgroundColor:'#ef4444'}}></span> {t('dashboard.expenses')}</span>
               </div>
             </div>
             <div style={{ width: '100%', height: 300, marginTop: '20px' }}>
@@ -183,43 +186,43 @@ export default function Dashboard() {
           <div className="card">
             <div className="control-header">
               <div>
-                <h3 className="card-title">Recent Invoices</h3>
-                <p className="card-subtitle">Latest customer bills and payment status</p>
+                <h3 className="card-title">{t('dashboard.recent_invoices')}</h3>
+                <p className="card-subtitle">{t('dashboard.recent_invoices_desc')}</p>
               </div>
-              <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)'}}>View Report</button>
+              <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)'}}>{t('dashboard.view_report')}</button>
             </div>
-            <div className="empty-state">No recent invoices</div>
+            <div className="empty-state">{t('dashboard.no_recent_invoices')}</div>
           </div>
         </div>
 
         <div className="dashboard-side-col">
           <div className="card">
-            <h3 className="card-title" style={{marginBottom: '16px'}}>Quick Actions</h3>
-            <p className="card-subtitle">Fast paths for daily shop work</p>
+            <h3 className="card-title" style={{marginBottom: '16px'}}>{t('dashboard.quick_actions')}</h3>
+            <p className="card-subtitle">{t('dashboard.quick_actions_desc')}</p>
             <div className="quick-actions-grid">
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#d1fae5', color: '#059669'}}><Banknote size={16} /></div>
-                New Bill
+                {t('dashboard.new_bill')}
               </button>
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#e0e7ff', color: '#4f46e5'}}><Plus size={16} /></div>
-                Add Product
+                {t('dashboard.add_product')}
               </button>
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#ccfbf1', color: '#0d9488'}}><CheckSquare size={16} /></div>
-                Check Stock
+                {t('dashboard.check_stock')}
               </button>
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#ffedd5', color: '#ea580c'}}><BookOpen size={16} /></div>
-                Khata
+                {t('dashboard.khata')}
               </button>
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#ffe4e6', color: '#e11d48'}}><ShoppingCart size={16} /></div>
-                Purchases
+                {t('sidebar.purchases')}
               </button>
               <button className="action-btn">
                 <div className="action-icon" style={{backgroundColor: '#e0e7ff', color: '#4f46e5'}}><BarChart size={16} /></div>
-                Reports
+                {t('sidebar.reports')}
               </button>
             </div>
           </div>
@@ -227,11 +230,11 @@ export default function Dashboard() {
           <div className="card">
             <div className="control-header">
               <div>
-                <h3 className="card-title">Top Selling Products</h3>
-                <p className="card-subtitle">Units sold and revenue contribution</p>
+                <h3 className="card-title">{t('dashboard.top_selling_products')}</h3>
+                <p className="card-subtitle">{t('dashboard.top_selling_desc')}</p>
               </div>
             </div>
-            <div className="empty-state">No sales data available</div>
+            <div className="empty-state">{t('dashboard.no_sales_data')}</div>
           </div>
         </div>
       </div>
@@ -241,33 +244,33 @@ export default function Dashboard() {
       <div className="card mt-6">
         <div className="control-header">
           <div>
-            <h3 className="card-title">Variant Stock Analytics</h3>
-            <p className="card-subtitle">Purchase, sale, and available stock by product variant</p>
+            <h3 className="card-title">{t('dashboard.variant_stock_analytics')}</h3>
+            <p className="card-subtitle">{t('dashboard.variant_stock_desc')}</p>
           </div>
-          <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)', fontWeight: 'bold' }}>Check Stock</button>
+          <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)', fontWeight: 'bold' }}>{t('dashboard.check_stock')}</button>
         </div>
         
         <div className="variant-stats-container">
           <div className="variant-stat-box">
-            <span className="variant-stat-label">PURCHASE STOCK</span>
+            <span className="variant-stat-label">{t('dashboard.purchase_stock')}</span>
             <span className="variant-stat-val">0.00</span>
           </div>
           <div className="variant-stat-box">
-            <span className="variant-stat-label">SALE STOCK</span>
+            <span className="variant-stat-label">{t('dashboard.sale_stock')}</span>
             <span className="variant-stat-val">1.00</span>
           </div>
           <div className="variant-stat-box">
-            <span className="variant-stat-label">AVAILABLE STOCK</span>
+            <span className="variant-stat-label">{t('dashboard.available_stock')}</span>
             <span className="variant-stat-val">99.00</span>
           </div>
         </div>
 
         <div className="variant-table">
           <div className="variant-table-header">
-            <div className="vt-col-1">PRODUCT VARIANT</div>
-            <div className="vt-col-2">PURCHASE STOCK</div>
-            <div className="vt-col-3">SALE STOCK</div>
-            <div className="vt-col-4">AVAILABLE STOCK</div>
+            <div className="vt-col-1">{t('dashboard.product_variant')}</div>
+            <div className="vt-col-2">{t('dashboard.purchase_stock')}</div>
+            <div className="vt-col-3">{t('dashboard.sale_stock')}</div>
+            <div className="vt-col-4">{t('dashboard.available_stock')}</div>
           </div>
           <div className="variant-table-row">
             <div className="vt-col-1">
@@ -284,10 +287,10 @@ export default function Dashboard() {
       <div className="card mt-6">
         <div className="control-header">
           <div>
-            <h3 className="card-title">Daily Sales (Last 7 Days)</h3>
-            <p className="card-subtitle">Simple daily sales progress bars</p>
+            <h3 className="card-title">{t('dashboard.daily_sales')}</h3>
+            <p className="card-subtitle">{t('dashboard.daily_sales_desc')}</p>
           </div>
-          <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)', fontWeight: 'bold' }}>Open Sales</button>
+          <button className="btn btn-outline" style={{ border: 'none', color: 'var(--accent-green)', fontWeight: 'bold' }}>{t('dashboard.open_sales')}</button>
         </div>
         
         <div className="daily-sales-bar">

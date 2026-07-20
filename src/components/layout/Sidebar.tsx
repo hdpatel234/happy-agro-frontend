@@ -11,6 +11,7 @@ import {
   Receipt, BarChart3, Save,
   CreditCard, CloudSun
 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './Sidebar.css';
 
 interface SidebarProps {
@@ -21,6 +22,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: SidebarProps) {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const getNavClass = (path: string) => {
     if (path === '/') {
@@ -48,44 +50,44 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
         <div className="logo-icon">HA</div>
         <div className="logo-text">
           <h1>Happy Agro</h1>
-          <span>SHOP PANEL</span>
+          <span>{t('sidebar.shop_panel')}</span>
         </div>
       </div>
 
       <nav className="sidebar-nav">
         <div className="nav-section">
-          <h3>MAIN</h3>
+          <h3>{t('sidebar.main')}</h3>
           <Link href="/" className={getNavClass('/')}>
             <LayoutDashboard size={18} />
-            <span>Dashboard</span>
+            <span>{t('sidebar.dashboard')}</span>
           </Link>
           <Link href="/pos" className={getNavClass('/pos')}>
             <Calculator size={18} />
-            <span>POS / Billing</span>
+            <span>{t('sidebar.pos')}</span>
           </Link>
           <Link href="/khata" className={getNavClass('/khata')}>
             <BookOpen size={18} />
-            <span>Khata (Udhar)</span>
+            <span>{t('sidebar.khata')}</span>
           </Link>
         </div>
 
         <div className="nav-section">
-          <h3>PRODUCTS</h3>
+          <h3>{t('sidebar.products')}</h3>
           <Link href="/categories" className={getNavClass('/categories')}>
             <FolderTree size={18} />
-            <span>Categories</span>
+            <span>{t('sidebar.categories')}</span>
           </Link>
           <Link href="/brands" className={getNavClass('/brands')}>
             <Tag size={18} />
-            <span>Brands</span>
+            <span>{t('sidebar.brands')}</span>
           </Link>
           <Link href="/products" className={getNavClass('/products')}>
             <Package size={18} />
-            <span>Products</span>
+            <span>{t('sidebar.products')}</span>
           </Link>
           <Link href="/inventory" className={getNavClass('/inventory')}>
             <Boxes size={18} />
-            <span>Inventory / Stock</span>
+            <span>{t('sidebar.inventory')}</span>
           </Link>
           {/* <Link href="#" className="nav-item">
             <LineChart size={18} />
@@ -94,74 +96,74 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
         </div>
 
         <div className="nav-section">
-          <h3>ORDERS</h3>
+          <h3>{t('sidebar.orders_section')}</h3>
           <Link href="/orders" className={getNavClass('/orders')}>
             <ClipboardList size={18} />
-            <span>Orders</span>
+            <span>{t('sidebar.orders')}</span>
           </Link>
           <Link href="/purchases" className={getNavClass('/purchases')}>
             <ShoppingCart size={18} />
-            <span>Purchases</span>
+            <span>{t('sidebar.purchases')}</span>
           </Link>
           <Link href="/sales-returns" className={getNavClass('/sales-returns')}>
             <span className="sidebar-text-icon">SR</span>
-            <span>Sales Return</span>
+            <span>{t('sidebar.sales_return')}</span>
           </Link>
           <Link href="/purchase-returns" className={getNavClass('/purchase-returns')}>
             <span className="sidebar-text-icon">PR</span>
-            <span>Purchase Return</span>
+            <span>{t('sidebar.purchase_return')}</span>
           </Link>
         </div>
 
         <div className="nav-section">
-          <h3>PEOPLE</h3>
+          <h3>{t('sidebar.people')}</h3>
           <Link href="/customers" className={getNavClass('/customers')}>
             <Users size={18} />
-            <span>Customers</span>
+            <span>{t('sidebar.customers')}</span>
           </Link>
           <Link href="/suppliers" className={getNavClass('/suppliers')}>
             <Factory size={18} />
-            <span>Suppliers</span>
+            <span>{t('sidebar.suppliers')}</span>
           </Link>
           <Link href="/staff" className={getNavClass('/staff')}>
             <UserCircle size={18} />
-            <span>Staff</span>
+            <span>{t('sidebar.staff')}</span>
           </Link>
           <Link href="/staff/permissions" className={getNavClass('/staff/permissions')}>
             <Key size={18} />
-            <span>Staff Permissions</span>
+            <span>{t('sidebar.staff_permissions')}</span>
           </Link>
         </div>
 
         <div className="nav-section">
-          <h3>FINANCIAL</h3>
+          <h3>{t('sidebar.financial')}</h3>
           <Link href="/expenses" className={getNavClass('/expenses')}>
             <Receipt size={18} />
-            <span>Expenses</span>
+            <span>{t('sidebar.expenses')}</span>
           </Link>
           <Link href="/reports" className={getNavClass('/reports')}>
             <BarChart3 size={18} />
-            <span>Reports</span>
+            <span>{t('sidebar.reports')}</span>
           </Link>
           <Link href="/backup" className={getNavClass('/backup')}>
             <Save size={18} />
-            <span>Backup</span>
+            <span>{t('sidebar.backup')}</span>
           </Link>
         </div>
 
         <div className="nav-section">
-          <h3>SETTINGS</h3>
+          <h3>{t('sidebar.settings')}</h3>
           <Link href="/subscriptions" className={getNavClass('/subscriptions')}>
             <CreditCard size={18} />
-            <span>Subscription</span>
+            <span>{t('sidebar.subscription')}</span>
           </Link>
         </div>
 
         <div className="nav-section">
-          <h3>WEATHER</h3>
+          <h3>{t('sidebar.weather')}</h3>
           <Link href="/weather" className={getNavClass('/weather')}>
             <CloudSun size={18} />
-            <span>Weather Dashboard</span>
+            <span>{t('sidebar.weather_dashboard')}</span>
           </Link>
         </div>
       </nav>
