@@ -291,8 +291,15 @@
     padding: 0 16px;
   }
   
+  .header-left {
+    min-width: 0;
+  }
+
   .header-left h2 {
     font-size: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   .header-search-container {
