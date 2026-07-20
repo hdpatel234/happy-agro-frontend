@@ -485,3 +485,52 @@
 .shl-right {
   color: var(--text-secondary);
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .so-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .so-stats-ribbon {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    gap: 12px;
+  }
+  
+  .so-stat-card {
+    min-width: 220px;
+    flex: 0 0 auto;
+  }
+
+  .so-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .so-chips {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .so-chip {
+    flex: 0 0 auto;
+  }
+
+  .so-filter-select {
+    width: 100%;
+  }
+
+  .so-health-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .so-donut-container {
+    margin: 0 auto;
+  }
+}

@@ -86,7 +86,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .sm-table {
@@ -147,3 +147,22 @@
   color: #2563eb !important;
   font-weight: 600;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .movements-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .sm-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sm-select, .sm-date-input, .sm-filter-btn {
+    width: 100%;
+  }
+}
+
