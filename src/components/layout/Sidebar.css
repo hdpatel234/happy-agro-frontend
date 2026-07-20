@@ -91,6 +91,14 @@
   font-weight: 500;
   color: #d1fae5;
   transition: all var(--transition-fast);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nav-item span:not(.sidebar-text-icon) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-item:hover {

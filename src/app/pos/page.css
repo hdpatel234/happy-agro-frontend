@@ -208,3 +208,33 @@
   font-size: 0.9rem;
   outline: none;
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .pos-container {
+    grid-template-columns: 1fr 300px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pos-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: calc(100vh - 120px);
+  }
+
+  .pos-product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  .pos-cart-sidebar {
+    height: auto;
+  }
+  
+  .pos-cart-body {
+    overflow-y: visible;
+  }
+}
+
