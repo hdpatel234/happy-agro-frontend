@@ -1139,6 +1139,17 @@ const hi: Record<string, string> = {
   'notif.delete_all': 'सभी हटाएँ',
   'notif.empty_title': 'कोई सूचना नहीं',
   'notif.empty_desc': 'आपके पास अभी तक कोई सूचना नहीं है।',
+
+  // Login
+  'login.title': 'वापसी पर स्वागत है',
+  'login.subtitle': 'अपने खाते में साइन इन करें',
+  'login.email_label': 'ईमेल या मोबाइल नंबर',
+  'login.email_placeholder': 'ईमेल या मोबाइल नंबर दर्ज करें',
+  'login.password_label': 'पासवर्ड',
+  'login.remember_me': 'मुझे याद रखें',
+  'login.forgot_password': 'पासवर्ड भूल गए?',
+  'login.sign_in_btn': 'साइन इन करें',
+  'login.alert_empty': 'कृपया ईमेल और पासवर्ड दोनों दर्ज करें।',
 };
 
 export default hi;

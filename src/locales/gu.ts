@@ -1139,6 +1139,17 @@ const gu: Record<string, string> = {
   'notif.delete_all': 'બધા કાઢી નાખો',
   'notif.empty_title': 'કોઈ સૂચનાઓ નથી',
   'notif.empty_desc': 'તમારી પાસે હજી સુધી કોઈ સૂચનાઓ નથી.',
+
+  // Login
+  'login.title': 'ફરીથી સ્વાગત છે',
+  'login.subtitle': 'તમારા એકાઉન્ટમાં સાઇન ઇન કરો',
+  'login.email_label': 'ઇમેઇલ અથવા મોબાઇલ નંબર',
+  'login.email_placeholder': 'ઇમેઇલ અથવા મોબાઇલ નંબર દાખલ કરો',
+  'login.password_label': 'પાસવર્ડ',
+  'login.remember_me': 'મને યાદ રાખો',
+  'login.forgot_password': 'પાસવર્ડ ભૂલી ગયા છો?',
+  'login.sign_in_btn': 'સાઇન ઇન કરો',
+  'login.alert_empty': 'કૃપા કરીને ઇમેઇલ અને પાસવર્ડ બંને દાખલ કરો.',
 };
 
 export default gu;

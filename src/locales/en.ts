@@ -1140,6 +1140,17 @@ const en: Record<string, string> = {
   'notif.delete_all': 'Delete All',
   'notif.empty_title': 'No notifications',
   'notif.empty_desc': "You don't have any notifications yet.",
+
+  // Login
+  'login.title': 'Welcome Back',
+  'login.subtitle': 'Sign in to your account',
+  'login.email_label': 'Email or Mobile Number',
+  'login.email_placeholder': 'Enter email or mobile number',
+  'login.password_label': 'Password',
+  'login.remember_me': 'Remember me',
+  'login.forgot_password': 'Forgot password?',
+  'login.sign_in_btn': 'Sign In',
+  'login.alert_empty': 'Please enter both email and password.',
 };
 
 export default en;
