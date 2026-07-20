@@ -3,35 +3,37 @@
 import React from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function CreateOrderPage() {
+  const { t } = useLanguage();
   return (
     <div className="co-container">
       <Link href="/orders" className="co-back-link">
-        &larr; Back to Orders
+        &larr; {t('orders.back_to_orders')}
       </Link>
       
       <div className="co-card">
-        <h2 className="co-card-title">Create New Order</h2>
+        <h2 className="co-card-title">{t('orders.create_new_order')}</h2>
 
         {/* Top 3-col Grid */}
         <div className="co-grid-3">
           <div className="co-form-group">
-            <label>Customer</label>
+            <label>{t('orders.customer')}</label>
             <div className="co-customer-row">
               <select className="co-select">
-                <option>Walk-in Customer</option>
+                <option>{t('orders.walk_in_customer')}</option>
               </select>
-              <button className="btn btn-primary co-new-btn"><Plus size={16} /> New</button>
+              <button className="btn btn-primary co-new-btn"><Plus size={16} /> {t('orders.new')}</button>
             </div>
           </div>
           <div className="co-form-group">
-            <label>Order Date <span className="text-red">*</span></label>
+            <label>{t('orders.order_date')} <span className="text-red">*</span></label>
             <input type="date" className="co-input" defaultValue="2026-07-19" />
           </div>
           <div className="co-form-group">
-            <label>Delivery Date</label>
+            <label>{t('orders.delivery_date')}</label>
             <input type="date" className="co-input" />
           </div>
         </div>
@@ -39,47 +41,47 @@ export default function CreateOrderPage() {
         {/* Status Row */}
         <div className="co-grid-1">
           <div className="co-form-group">
-            <label>Status <span className="text-red">*</span></label>
+            <label>{t('orders.status')} <span className="text-red">*</span></label>
             <select className="co-select">
-              <option>Pending</option>
-              <option>Delivered</option>
+              <option>{t('orders.pending')}</option>
+              <option>{t('orders.delivered')}</option>
             </select>
           </div>
         </div>
 
         {/* Order Items Section */}
         <div className="co-section-header">
-          <h3 className="co-section-title">Order Items</h3>
-          <button className="btn btn-primary co-add-item-btn"><Plus size={16} /> Add Item</button>
+          <h3 className="co-section-title">{t('orders.order_items')}</h3>
+          <button className="btn btn-primary co-add-item-btn"><Plus size={16} /> {t('orders.add_item')}</button>
         </div>
 
         <div className="co-item-row">
           <div className="co-form-group flex-1">
-            <label>Product <span className="text-red">*</span></label>
+            <label>{t('orders.product')} <span className="text-red">*</span></label>
             <select className="co-select">
-              <option>Select Product</option>
+              <option>{t('orders.select_product')}</option>
             </select>
           </div>
           <div className="co-form-group flex-1">
-            <label>Variant</label>
+            <label>{t('orders.variant')}</label>
             <select className="co-select">
-              <option>No Variant</option>
+              <option>{t('orders.no_variant')}</option>
             </select>
           </div>
           <div className="co-form-group co-w-sm">
-            <label>Quantity <span className="text-red">*</span></label>
+            <label>{t('orders.quantity')} <span className="text-red">*</span></label>
             <input type="number" className="co-input" defaultValue="1" />
           </div>
           <div className="co-form-group co-w-sm">
-            <label>Price <span className="text-red">*</span></label>
+            <label>{t('orders.price')} <span className="text-red">*</span></label>
             <input type="number" className="co-input" defaultValue="0" />
           </div>
           <div className="co-form-group co-w-sm">
-            <label>Discount</label>
+            <label>{t('orders.discount')}</label>
             <input type="number" className="co-input" defaultValue="0" />
           </div>
           <div className="co-form-group-btn">
-            <button className="btn btn-danger co-remove-btn">Remove</button>
+            <button className="btn btn-danger co-remove-btn">{t('orders.remove')}</button>
           </div>
         </div>
 
@@ -87,29 +89,29 @@ export default function CreateOrderPage() {
         <div className="co-summary-grid">
           <div className="co-shipping-col">
             <div className="co-form-group">
-              <label>Shipping Charges</label>
+              <label>{t('orders.shipping_charges')}</label>
               <input type="number" className="co-input" defaultValue="0" />
             </div>
           </div>
           <div className="co-summary-col">
             <div className="co-summary-row">
-              <span className="co-summary-label">Subtotal:</span>
+              <span className="co-summary-label">{t('orders.subtotal')}</span>
               <span className="co-summary-value fw-600">₹0.00</span>
             </div>
             <div className="co-summary-row">
-              <span className="co-summary-label">Discount:</span>
+              <span className="co-summary-label">{t('orders.discount')}</span>
               <span className="co-summary-value text-red fw-600">-₹0.00</span>
             </div>
             <div className="co-summary-row">
-              <span className="co-summary-label">Tax (GST):</span>
+              <span className="co-summary-label">{t('orders.tax_gst')}</span>
               <span className="co-summary-value fw-600">₹0.00</span>
             </div>
             <div className="co-summary-row">
-              <span className="co-summary-label">Shipping:</span>
+              <span className="co-summary-label">{t('orders.shipping')}</span>
               <span className="co-summary-value fw-600">₹0.00</span>
             </div>
             <div className="co-summary-row co-grand-total-row">
-              <span className="co-summary-label fw-800">Grand Total:</span>
+              <span className="co-summary-label fw-800">{t('orders.grand_total')}</span>
               <span className="co-summary-value text-green fw-800">₹0.00</span>
             </div>
           </div>
@@ -120,36 +122,36 @@ export default function CreateOrderPage() {
         {/* Info Blocks Split */}
         <div className="co-info-split">
           <div className="co-info-left">
-            <h3 className="co-section-title">Payment Information</h3>
+            <h3 className="co-section-title">{t('orders.payment_info')}</h3>
             <div className="co-form-group">
-              <label>Payment Mode <span className="text-red">*</span></label>
+              <label>{t('orders.payment_mode')} <span className="text-red">*</span></label>
               <select className="co-select">
-                <option>Cash</option>
+                <option>{t('orders.cash')}</option>
               </select>
             </div>
             <div className="co-form-group mt-16">
-              <label>Payment Status <span className="text-red">*</span></label>
+              <label>{t('orders.payment_status')} <span className="text-red">*</span></label>
               <select className="co-select">
-                <option>Paid</option>
+                <option>{t('orders.paid')}</option>
               </select>
             </div>
             <div className="co-form-group mt-16">
-              <label>Paid Amount <span className="text-red">*</span></label>
+              <label>{t('orders.paid_amount')} <span className="text-red">*</span></label>
               <input type="number" className="co-input" defaultValue="0.00" />
             </div>
           </div>
           <div className="co-info-right">
-            <h3 className="co-section-title">Delivery Information</h3>
+            <h3 className="co-section-title">{t('orders.delivery_info')}</h3>
             <div className="co-form-group">
-              <label>Delivery Address</label>
+              <label>{t('orders.delivery_address')}</label>
               <textarea className="co-textarea" rows={3}></textarea>
             </div>
             <div className="co-form-group mt-16">
-              <label>Delivery Phone</label>
+              <label>{t('orders.delivery_phone')}</label>
               <input type="text" className="co-input" />
             </div>
             <div className="co-form-group mt-16">
-              <label>Notes</label>
+              <label>{t('orders.notes')}</label>
               <textarea className="co-textarea" rows={3}></textarea>
             </div>
           </div>
@@ -159,8 +161,8 @@ export default function CreateOrderPage() {
 
         {/* Footer Actions */}
         <div className="co-footer">
-          <button className="btn co-btn-outline">Cancel</button>
-          <button className="btn btn-primary co-create-btn">Create Order</button>
+          <button className="btn co-btn-outline">{t('orders.cancel')}</button>
+          <button className="btn btn-primary co-create-btn">{t('orders.create_btn')}</button>
         </div>
 
       </div>
