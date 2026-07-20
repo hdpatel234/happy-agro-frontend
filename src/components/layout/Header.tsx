@@ -52,6 +52,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
         if (pathname.startsWith('/categories/') && pathname !== '/categories/create') return t('title.view_category');
         if (pathname === '/categories') return t('title.categories_subcategories');
         if (pathname === '/brands/create') return t('title.create_brand');
+        if (pathname.includes('/edit') && pathname.startsWith('/brands/')) return t('title.edit_brand');
         if (pathname === '/brands') return t('title.brands');
         if (pathname === '/products/create') return t('title.create_product');
         if (pathname === '/products') return t('title.products');

@@ -51,6 +51,7 @@ const en: Record<string, string> = {
   'title.view_category': 'View Category',
   'title.categories_subcategories': 'Categories & Subcategories',
   'title.create_brand': 'Create Brand',
+  'title.edit_brand': 'Edit Brand',
   'title.brands': 'Brands',
   'title.create_product': 'Create Product',
   'title.products': 'Products',
@@ -1088,6 +1089,17 @@ const en: Record<string, string> = {
   'wx.today': 'TODAY',
   'wx.agri_tips': '🌾 Agricultural Tips',
   'wx.agri_tip_1': 'Rain expected today — avoid pesticide/fertilizer spraying.',
+  // Brands Edit
+  'brands.edit_brand': 'Edit Brand',
+  'brands.back_to_brands': 'Back to Brands',
+  'brands.brand_name': 'Brand Name',
+  'brands.company_name': 'Company Name',
+  'brands.company_name_help': 'The full legal name of the company that owns this brand',
+  'brands.description': 'Description',
+  'brands.description_placeholder': 'Optional description about the brand',
+  'brands.active_help': 'Active (Brand will be available for product selection)',
+  'brands.update_btn': 'Update Brand',
+  'brands.cancel': 'Cancel',
 };
 
 export default en;
