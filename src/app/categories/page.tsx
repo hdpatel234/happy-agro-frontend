@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 const categoriesData = [
@@ -76,6 +77,7 @@ export default function CategoriesPage() {
   const [categories, setCategories] = useState(categoriesData);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [categoryToDelete, setCategoryToDelete] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const handleDeleteClick = (index: number) => {
     setCategoryToDelete(index);
@@ -101,12 +103,12 @@ export default function CategoriesPage() {
     <div className="cat-container">
       <div className="cat-header">
         <div className="cat-title-section">
-          <h2 className="cat-title">Categories</h2>
-          <p className="cat-subtitle">Manage your product categories and subcategories</p>
+          <h2 className="cat-title">{t('categories.title')}</h2>
+          <p className="cat-subtitle">{t('categories.subtitle')}</p>
         </div>
         <Link href="/categories/create" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Plus size={18} />
-          <span>Add Category</span>
+          <span>{t('categories.add_category')}</span>
         </Link>
       </div>
 
@@ -116,30 +118,30 @@ export default function CategoriesPage() {
             <div className="cat-card-body">
               <div className="cat-card-title-row">
                 <h3 className="cat-card-title">{category.title}</h3>
-                {category.active && <span className="cat-badge-active">Active</span>}
+                {category.active && <span className="cat-badge-active">{t('categories.active')}</span>}
               </div>
               <div className="cat-card-subtitle">{category.subtitle}</div>
               
               <div className="cat-subcategories-section">
-                <div className="cat-sub-label">Subcategories:</div>
+                <div className="cat-sub-label">{t('categories.subcategories_label')}</div>
                 <div className="cat-pill-container">
                   {category.subcategories.length > 0 ? (
                     category.subcategories.map((sub, i) => (
                       <span key={i} className="cat-pill">{sub}</span>
                     ))
                   ) : (
-                    <span className="text-muted" style={{ fontSize: '0.8rem' }}>None</span>
+                    <span className="text-muted" style={{ fontSize: '0.8rem' }}>{t('categories.none')}</span>
                   )}
                 </div>
               </div>
             </div>
             
             <div className="cat-card-footer">
-              <span className="cat-product-count">{category.productCount} products</span>
+              <span className="cat-product-count">{category.productCount} {t('categories.products')}</span>
               <div className="cat-actions">
-                <Link href={`/categories/${index + 1}`} className="cat-action-btn view">View</Link>
-                <Link href={`/categories/${index + 1}/edit`} className="cat-action-btn edit">Edit</Link>
-                <button className="cat-action-btn delete" onClick={() => handleDeleteClick(index)}>Delete</button>
+                <Link href={`/categories/${index + 1}`} className="cat-action-btn view">{t('categories.view')}</Link>
+                <Link href={`/categories/${index + 1}/edit`} className="cat-action-btn edit">{t('categories.edit')}</Link>
+                <button className="cat-action-btn delete" onClick={() => handleDeleteClick(index)}>{t('categories.delete')}</button>
               </div>
             </div>
           </div>
@@ -149,9 +151,9 @@ export default function CategoriesPage() {
       <Modal 
         isOpen={isDeleteModalOpen}
         type="confirm"
-        title="Delete Category"
-        message="Are you sure you want to delete this category? This action cannot be undone."
-        confirmText="Delete"
+        title={t('categories.delete_modal_title')}
+        message={t('categories.delete_modal_message')}
+        confirmText={t('categories.delete_modal_confirm')}
         onConfirm={confirmDelete}
         onCancel={cancelDelete}
       />
