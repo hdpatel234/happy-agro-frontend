@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function CustomersPage() {
+  const { t } = useLanguage();
   const [customers, setCustomers] = useState([
     { id: 1, name: 'Test Name', phone: '-', email: '-', address: '-', status: 'Active' }
   ]);
@@ -35,11 +37,11 @@ export default function CustomersPage() {
     <div className="customers-container">
       <div className="customers-header">
         <div className="customers-title-section">
-          <h2 className="customers-title">Customers</h2>
-          <p className="customers-subtitle">Manage your customer list</p>
+          <h2 className="customers-title">{t('customers.title')}</h2>
+          <p className="customers-subtitle">{t('customers.subtitle')}</p>
         </div>
         <Link href="/customers/create" className="btn btn-blue customers-add-btn">
-          <Plus size={16} /> Add Customer
+          <Plus size={16} /> {t('customers.add_customer')}
         </Link>
       </div>
 
@@ -47,22 +49,22 @@ export default function CustomersPage() {
         <input 
           type="text" 
           className="customer-search" 
-          placeholder="Search by name, phone, or email..." 
+          placeholder={t('customers.search_placeholder')} 
         />
-        <button className="btn btn-blue customer-filter-btn">Search</button>
-        <button className="btn customer-clear-btn">Clear</button>
+        <button className="btn btn-blue customer-filter-btn">{t('customers.search_btn')}</button>
+        <button className="btn customer-clear-btn">{t('customers.clear_btn')}</button>
       </div>
 
       <div className="customers-table-container">
         <table className="customers-table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Status</th>
-              <th>Actions</th>
+              <th>{t('customers.table.name')}</th>
+              <th>{t('customers.table.phone')}</th>
+              <th>{t('customers.table.email')}</th>
+              <th>{t('customers.table.address')}</th>
+              <th>{t('customers.table.status')}</th>
+              <th>{t('customers.table.actions')}</th>
             </tr>
           </thead>
           <tbody>
@@ -73,12 +75,12 @@ export default function CustomersPage() {
                   <td className="text-muted">{customer.phone}</td>
                   <td className="text-muted">{customer.email}</td>
                   <td className="text-muted">{customer.address}</td>
-                  <td><span className="badge-active">{customer.status}</span></td>
+                  <td><span className="badge-active">{customer.status === 'Active' ? t('brands.active') : customer.status}</span></td>
                   <td>
                     <div className="action-buttons-row">
-                      <Link href={`/customers/${customer.id}`} className="action-btn-view">View</Link>
-                      <button className="action-btn-edit">Edit</button>
-                      <button className="action-btn-delete" onClick={() => openDeleteModal(customer.id)}>Delete</button>
+                      <Link href={`/customers/${customer.id}`} className="action-btn-view">{t('customers.view')}</Link>
+                      <button className="action-btn-edit">{t('customers.edit')}</button>
+                      <button className="action-btn-delete" onClick={() => openDeleteModal(customer.id)}>{t('customers.delete')}</button>
                     </div>
                   </td>
                 </tr>
@@ -86,7 +88,7 @@ export default function CustomersPage() {
             ) : (
               <tr>
                 <td colSpan={6} style={{ textAlign: 'center', padding: '24px' }}>
-                  No customers found.
+                  {t('customers.no_customers')}
                 </td>
               </tr>
             )}
@@ -97,10 +99,10 @@ export default function CustomersPage() {
       <Modal 
         isOpen={isDeleteModalOpen}
         type="error"
-        title="Delete Customer"
-        message="Are you sure you want to delete this customer? This action cannot be undone."
-        confirmText="Delete"
-        cancelText="Cancel"
+        title={t('customers.delete_modal_title')}
+        message={t('customers.delete_modal_message')}
+        confirmText={t('customers.delete_modal_confirm')}
+        cancelText={t('customers.delete_modal_cancel')}
         onConfirm={confirmDelete}
         onCancel={closeDeleteModal}
       />

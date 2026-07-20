@@ -3,9 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { Pencil, MapPin, ClipboardList } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import './page.css';
 
 export default function CustomerDetailsPage() {
+  const { t } = useLanguage();
+
   return (
     <div className="cd-container">
       {/* Top Header */}
@@ -15,26 +18,26 @@ export default function CustomerDetailsPage() {
           <span className="cd-header-icon">🏢</span>
         </div>
         <Link href="/customers/1/edit" className="btn cd-edit-btn">
-          <Pencil size={16} /> Edit Customer
+          <Pencil size={16} /> {t('customers.edit_customer')}
         </Link>
       </div>
 
       {/* Info Cards Row */}
       <div className="cd-grid-4">
         <div className="cd-info-card bg-blue">
-          <span className="cd-info-label text-blue">EMAIL</span>
+          <span className="cd-info-label text-blue">{t('customers.email_caps')}</span>
           <span className="cd-info-value">-</span>
         </div>
         <div className="cd-info-card bg-purple">
-          <span className="cd-info-label text-purple">ADDRESS</span>
+          <span className="cd-info-label text-purple">{t('customers.address_caps')}</span>
           <span className="cd-info-value">-</span>
         </div>
         <div className="cd-info-card bg-orange">
-          <span className="cd-info-label text-orange">GSTIN</span>
+          <span className="cd-info-label text-orange">{t('customers.gstin_caps')}</span>
           <span className="cd-info-value">-</span>
         </div>
         <div className="cd-info-card bg-green">
-          <span className="cd-info-label text-green">CREDIT LIMIT</span>
+          <span className="cd-info-label text-green">{t('customers.credit_limit_caps')}</span>
           <span className="cd-info-value">₹0.00</span>
         </div>
       </div>
@@ -42,11 +45,11 @@ export default function CustomerDetailsPage() {
       {/* Current Balance Card */}
       <div className="cd-balance-card">
         <div className="cd-balance-content">
-          <span className="cd-balance-label">Current Balance</span>
+          <span className="cd-balance-label">{t('customers.current_balance')}</span>
           <div className="cd-balance-amount">₹0.00</div>
           <div className="cd-balance-subtitle">
             <MapPin size={14} className="cd-pin-icon" />
-            <span>Advance/Prepaid (Payable)</span>
+            <span>{t('customers.payable_subtitle')}</span>
           </div>
         </div>
         <div className="cd-balance-watermark">✓</div>
@@ -55,19 +58,19 @@ export default function CustomerDetailsPage() {
       {/* Financial Metrics Row */}
       <div className="cd-grid-4">
         <div className="cd-metric-card border-blue bg-light-blue">
-          <span className="cd-metric-label text-blue">OPENING BALANCE</span>
+          <span className="cd-metric-label text-blue">{t('customers.opening_balance_caps')}</span>
           <span className="cd-metric-value text-blue">₹0.00</span>
         </div>
         <div className="cd-metric-card border-green bg-light-green">
-          <span className="cd-metric-label text-green">TOTAL CREDITS</span>
+          <span className="cd-metric-label text-green">{t('customers.total_credits_caps')}</span>
           <span className="cd-metric-value text-green">₹120.00</span>
         </div>
         <div className="cd-metric-card border-red bg-light-red">
-          <span className="cd-metric-label text-red">TOTAL DEBITS</span>
+          <span className="cd-metric-label text-red">{t('customers.total_debits_caps')}</span>
           <span className="cd-metric-value text-red">₹120.00</span>
         </div>
         <div className="cd-metric-card border-purple bg-light-purple">
-          <span className="cd-metric-label text-purple">CLOSING BALANCE</span>
+          <span className="cd-metric-label text-purple">{t('customers.closing_balance_caps')}</span>
           <span className="cd-metric-value text-purple">₹0.00</span>
         </div>
       </div>
@@ -77,39 +80,39 @@ export default function CustomerDetailsPage() {
         <div className="cd-section-header">
           <h3 className="cd-section-title">
             <ClipboardList size={20} className="cd-section-icon" />
-            Transaction History
+            {t('customers.transaction_history')}
           </h3>
-          <span className="cd-total-label">Total: 2 transactions</span>
+          <span className="cd-total-label">{t('customers.total_label')} 2 {t('customers.transactions')}</span>
         </div>
 
         {/* Filter Block */}
         <div className="cd-filter-card">
           <div className="cd-grid-4">
             <div className="cd-form-group">
-              <label>Transaction Type</label>
+              <label>{t('customers.transaction_type')}</label>
               <select className="cd-input">
-                <option>All Transactions</option>
+                <option>{t('customers.all_transactions')}</option>
               </select>
             </div>
             <div className="cd-form-group">
-              <label>Start Date</label>
+              <label>{t('customers.start_date')}</label>
               <input type="date" className="cd-input" />
             </div>
             <div className="cd-form-group">
-              <label>End Date</label>
+              <label>{t('customers.end_date')}</label>
               <input type="date" className="cd-input" />
             </div>
             <div className="cd-form-group">
-              <label>Search</label>
-              <input type="text" className="cd-input" placeholder="Search by reference..." />
+              <label>{t('customers.search_label')}</label>
+              <input type="text" className="cd-input" placeholder={t('customers.search_reference_placeholder')} />
             </div>
           </div>
           <div className="cd-filter-actions">
             <button className="btn btn-primary cd-apply-btn">
-              <span className="cd-filter-dot"></span> Apply Filters
+              <span className="cd-filter-dot"></span> {t('customers.apply_filters')}
             </button>
             <button className="btn cd-reset-btn">
-              ↻ Reset
+              ↻ {t('customers.reset')}
             </button>
           </div>
         </div>
@@ -122,14 +125,14 @@ export default function CustomerDetailsPage() {
               <div className="cd-tx-info">
                 <h4 className="cd-tx-title">Cash Payment - Invoice #INV-20260719-0001</h4>
                 <div className="cd-tx-meta">
-                  <span className="cd-badge-gray">Debit</span>
+                  <span className="cd-badge-gray">{t('customers.debit')}</span>
                   <span className="cd-tx-date">Jul 19, 2026</span>
                 </div>
               </div>
               <div className="cd-tx-amount text-green fw-bold">+₹120.00</div>
             </div>
             <div className="cd-tx-subrow">
-              <span className="cd-tx-ref">Reference: <Link href="#" className="cd-ref-link">invoice #742</Link></span>
+              <span className="cd-tx-ref">{t('customers.reference')} <Link href="#" className="cd-ref-link">invoice #742</Link></span>
             </div>
           </div>
 
@@ -139,14 +142,14 @@ export default function CustomerDetailsPage() {
               <div className="cd-tx-info">
                 <h4 className="cd-tx-title">Sale - Invoice #INV-20260719-0001</h4>
                 <div className="cd-tx-meta">
-                  <span className="cd-badge-gray">Credit</span>
+                  <span className="cd-badge-gray">{t('customers.credit')}</span>
                   <span className="cd-tx-date">Jul 19, 2026</span>
                 </div>
               </div>
               <div className="cd-tx-amount text-red fw-bold">-₹120.00</div>
             </div>
             <div className="cd-tx-subrow">
-              <span className="cd-tx-ref">Reference: <Link href="#" className="cd-ref-link">invoice #742</Link></span>
+              <span className="cd-tx-ref">{t('customers.reference')} <Link href="#" className="cd-ref-link">invoice #742</Link></span>
             </div>
           </div>
         </div>
