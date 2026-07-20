@@ -145,6 +145,32 @@ const hi: Record<string, string> = {
   'dashboard.daily_sales': 'दैनिक बिक्री (पिछले 7 दिन)',
   'dashboard.daily_sales_desc': 'सरल दैनिक बिक्री प्रगति बार',
   'dashboard.open_sales': 'बिक्री खोलें',
+
+  // Backup Page
+  'backup.create_backup': 'बैकअप बनाएं',
+  'backup.create_backup_desc': 'मॉड्यूल चुनें और पीडीएफ बैकअप डाउनलोड करने के लिए अभी बैकअप लें पर क्लिक करें।',
+  'backup.select_all': 'सभी चुनें',
+  'backup.backup_now': 'अभी बैकअप लें',
+  'backup.module.khata': 'खाता',
+  'backup.module.dashboard': 'डैशबोर्ड',
+  'backup.module.pos_billing': 'POS बिलिंग',
+  'backup.module.categories': 'श्रेणियाँ',
+  'backup.module.brands': 'ब्रांड',
+  'backup.module.products': 'उत्पाद',
+  'backup.module.inventory_stock': 'इन्वेंटरी स्टॉक',
+  'backup.module.orders': 'ऑर्डर',
+  'backup.module.purchases': 'खरीद',
+  'backup.module.customers': 'ग्राहक',
+  'backup.module.suppliers': 'आपूर्तिकर्ता',
+  'backup.module.expenses': 'खर्च',
+  'backup.module.reports': 'रिपोर्ट',
+  'backup.module.payment_reminders': 'भुगतान अनुस्मारक',
+  'backup.module.settings': 'सेटिंग्स',
+  'backup.module.weather': 'मौसम',
+  'backup.module.backup': 'बैकअप',
+  'backup.module.staff': 'स्टाफ',
+  'backup.module.staff_permissions': 'स्टाफ अनुमतियां',
+  'backup.module.subscription': 'सदस्यता',
 };
 
 export default hi;

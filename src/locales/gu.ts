@@ -145,6 +145,32 @@ const gu: Record<string, string> = {
   'dashboard.daily_sales': 'દૈનિક વેચાણ (છેલ્લા 7 દિવસ)',
   'dashboard.daily_sales_desc': 'સરળ દૈનિક વેચાણ પ્રગતિ બાર',
   'dashboard.open_sales': 'વેચાણ ખોલો',
+
+  // Backup Page
+  'backup.create_backup': 'બેકઅપ બનાવો',
+  'backup.create_backup_desc': 'મોડ્યુલો પસંદ કરો અને પીડીએફ બેકઅપ ડાઉનલોડ કરવા માટે હમણાં બેકઅપ લો પર ક્લિક કરો.',
+  'backup.select_all': 'બધા પસંદ કરો',
+  'backup.backup_now': 'હમણાં બેકઅપ લો',
+  'backup.module.khata': 'ખાતા',
+  'backup.module.dashboard': 'ડેશબોર્ડ',
+  'backup.module.pos_billing': 'POS બિલિંગ',
+  'backup.module.categories': 'શ્રેણીઓ',
+  'backup.module.brands': 'બ્રાન્ડ્સ',
+  'backup.module.products': 'ઉત્પાદનો',
+  'backup.module.inventory_stock': 'ઇન્વેન્ટરી સ્ટોક',
+  'backup.module.orders': 'ઓર્ડર્સ',
+  'backup.module.purchases': 'ખરીદી',
+  'backup.module.customers': 'ગ્રાહકો',
+  'backup.module.suppliers': 'સપ્લાયર્સ',
+  'backup.module.expenses': 'ખર્ચ',
+  'backup.module.reports': 'રિપોર્ટ્સ',
+  'backup.module.payment_reminders': 'ચુકવણી રિમાઇન્ડર્સ',
+  'backup.module.settings': 'સેટિંગ્સ',
+  'backup.module.weather': 'હવામાન',
+  'backup.module.backup': 'બેકઅપ',
+  'backup.module.staff': 'સ્ટાફ',
+  'backup.module.staff_permissions': 'સ્ટાફ પરવાનગીઓ',
+  'backup.module.subscription': 'સબ્સ્ક્રિપ્શન',
 };
 
 export default gu;

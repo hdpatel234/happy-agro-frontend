@@ -145,6 +145,32 @@ const en: Record<string, string> = {
   'dashboard.daily_sales': 'Daily Sales (Last 7 Days)',
   'dashboard.daily_sales_desc': 'Simple daily sales progress bars',
   'dashboard.open_sales': 'Open Sales',
+
+  // Backup Page
+  'backup.create_backup': 'Create Backup',
+  'backup.create_backup_desc': 'Select modules and click Backup Now to download PDF backup.',
+  'backup.select_all': 'Select All',
+  'backup.backup_now': 'Backup Now',
+  'backup.module.khata': 'Khata',
+  'backup.module.dashboard': 'Dashboard',
+  'backup.module.pos_billing': 'POS Billing',
+  'backup.module.categories': 'Categories',
+  'backup.module.brands': 'Brands',
+  'backup.module.products': 'Products',
+  'backup.module.inventory_stock': 'Inventory Stock',
+  'backup.module.orders': 'Orders',
+  'backup.module.purchases': 'Purchases',
+  'backup.module.customers': 'Customers',
+  'backup.module.suppliers': 'Suppliers',
+  'backup.module.expenses': 'Expenses',
+  'backup.module.reports': 'Reports',
+  'backup.module.payment_reminders': 'Payment Reminders',
+  'backup.module.settings': 'Settings',
+  'backup.module.weather': 'Weather',
+  'backup.module.backup': 'Backup',
+  'backup.module.staff': 'Staff',
+  'backup.module.staff_permissions': 'Staff Permissions',
+  'backup.module.subscription': 'Subscription',
 };
 
 export default en;
