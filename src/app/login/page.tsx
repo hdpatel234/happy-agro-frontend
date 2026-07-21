@@ -10,8 +10,8 @@ import './page.css';
 export default function LoginPage() {
     const router = useRouter();
     const { language, setLanguage, t } = useLanguage();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('demo@happyagro.com');
+    const [password, setPassword] = useState('123456');
     const [showPassword, setShowPassword] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
     const langRef = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ export default function LoginPage() {
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         if (email && password) {
-            // In-memory authentication placeholder
+            localStorage.setItem('isAuthenticated', 'true');
             router.push('/');
         } else {
             alert(t('login.alert_empty'));
@@ -62,7 +62,9 @@ export default function LoginPage() {
                 {/* Logo and Titles */}
                 <div className="login-branding">
                     <div className="login-logo-container">
-                        <div className="login-logo-icon">HA</div>
+                        <div className="login-logo-icon" style={{ background: 'transparent' }}>
+                            <img src="/logo.png" alt="KrishiRatna Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        </div>
                     </div>
                     <h1 className="login-title">{t('login.title')}</h1>
                     <p className="login-subtitle">{t('login.subtitle')}</p>

@@ -1,14 +1,31 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const auth = localStorage.getItem('isAuthenticated');
+      if (auth === 'true') {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+        if (pathname !== '/login') {
+          router.push('/login');
+        }
+      }
+    };
+    checkAuth();
+  }, [pathname, router]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,6 +44,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   if (pathname === '/login') {
     return <main className="auth-layout">{children}</main>;
   }
+
+  if (isAuthenticated === null) return null; // Avoid rendering flash before checking auth
+
+  if (!isAuthenticated) return null;
 
   const toggleSidebar = () => setIsSidebarMinimized(!isSidebarMinimized);
 

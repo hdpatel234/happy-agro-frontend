@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Bell, Globe, ChevronDown, Clock, Building2, Settings, List, LogOut, Menu } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -19,6 +19,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
     const langRef = useRef<HTMLDivElement>(null);
     const profileRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
+    const router = useRouter();
     const { language, setLanguage, t } = useLanguage();
 
     useEffect(() => {
@@ -172,7 +173,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
                                 <span>{t('header.shop_list')}</span>
                             </Link>
                             <div className="dropdown-divider"></div>
-                            <div className="dropdown-item text-danger" onClick={() => setIsProfileOpen(false)}>
+                            <div className="dropdown-item text-danger" onClick={() => { setIsProfileOpen(false); localStorage.removeItem('isAuthenticated'); router.push('/login'); }}>
                                 <LogOut size={16} className="item-icon text-danger" />
                                 <span>{t('header.logout')}</span>
                             </div>
