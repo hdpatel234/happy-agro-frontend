@@ -96,7 +96,7 @@ const gu: Record<string, string> = {
   'title.owner_dashboard': 'માલિક ડેશબોર્ડ',
 
   // Dashboard
-  'dashboard.control_center': 'હેપ્પી એગ્રો કંટ્રોલ સેન્ટર',
+  'dashboard.control_center': 'કંટ્રોલ સેન્ટર',
   'dashboard.control_center_desc': 'સક્રિય દુકાન માટે લાઇવ વેચાણ, ખરીદી, સ્ટોક, ક્રેડિટ અને નફાના સંકેતો.',
   'dashboard.new_bill': 'નવું બિલ',
   'dashboard.profit_report': 'નફાનો રિપોર્ટ',

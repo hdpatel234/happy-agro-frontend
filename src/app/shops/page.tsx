@@ -27,7 +27,7 @@ export default function ShopsPage() {
         <div className="shop-card active-shop">
           <div className="shop-card-header">
             <div className="shop-name-section">
-              <h3 className="shop-name">Happy Agro</h3>
+              <h3 className="shop-name">KrishiRatna</h3>
               <div className="shop-status-badge">
                 <Check size={12} /> {t('shops.active_shop') || 'Active Shop'}
               </div>

@@ -4,8 +4,11 @@ import ClientLayout from '@/components/layout/ClientLayout';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export const metadata: Metadata = {
-  title: 'Happy Agro - Owner Dashboard',
+  title: 'KrishiRatna - Owner Dashboard',
   description: 'Control center for your shop',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({

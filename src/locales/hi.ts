@@ -96,7 +96,7 @@ const hi: Record<string, string> = {
   'title.owner_dashboard': 'मालिक डैशबोर्ड',
 
   // Dashboard
-  'dashboard.control_center': 'हैप्पी एग्रो नियंत्रण केंद्र',
+  'dashboard.control_center': 'नियंत्रण केंद्र',
   'dashboard.control_center_desc': 'सक्रिय दुकान के लिए लाइव बिक्री, खरीद, स्टॉक, क्रेडिट और लाभ संकेत।',
   'dashboard.new_bill': 'नया बिल',
   'dashboard.profit_report': 'लाभ रिपोर्ट',

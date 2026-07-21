@@ -53,9 +53,11 @@ export default function Sidebar({ isMinimized, toggleSidebar, isMobile }: Sideba
             )}
             <aside className={`sidebar ${isMinimized ? 'minimized' : ''} ${isMobile ? 'mobile' : ''}`}>
                 <div className="sidebar-header">
-                    <div className="logo-icon">HA</div>
+                    <div className="logo-icon" style={{ background: 'transparent' }}>
+                        <img src="/logo.png" alt="KrishiRatna Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    </div>
                     <div className="logo-text">
-                        <h1>Happy Agro</h1>
+                        <h1 style={{ fontSize: '18px' }}>KrishiRatna</h1>
                         <span>{t('sidebar.shop_panel')}</span>
                     </div>
                 </div>

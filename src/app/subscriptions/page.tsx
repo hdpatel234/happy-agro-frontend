@@ -154,7 +154,7 @@ export default function SubscriptionsPage() {
               <tr className="sub-table-row-active">
                 <td>1</td>
                 <td>
-                  <div className="sub-shop-name">Happy Agro</div>
+                  <div className="sub-shop-name">KrishiRatna</div>
                   <div className="sub-shop-type text-green-600 font-500">{t('sub.main_shop')}</div>
                 </td>
                 <td className="text-gray-800">Trial Plan</td>

@@ -97,7 +97,7 @@ const en: Record<string, string> = {
   'title.owner_dashboard': 'Owner Dashboard',
 
   // Dashboard
-  'dashboard.control_center': 'Happy Agro Control Center',
+  'dashboard.control_center': 'Control Center',
   'dashboard.control_center_desc': 'Live sales, purchase, stock, credit, and profit signals for the active shop.',
   'dashboard.new_bill': 'New Bill',
   'dashboard.profit_report': 'Profit Report',

@@ -41,7 +41,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
     };
 
     useEffect(() => {
-        document.title = `Happy Agro - ${getPageTitleText()}`;
+        document.title = `KrishiRatna - ${getPageTitleText()}`;
     }, [pathname, language]);
 
     const getPageTitle = () => {
@@ -149,7 +149,7 @@ export default function Header({ toggleSidebar, isMobile }: HeaderProps) {
                             {/* <div className="dropdown-header">
                                 <span className="dropdown-label">{t('header.current_shop')}</span>
                                 <div className="shop-info">
-                                    <span className="shop-name">Happy Agro</span>
+                                    <span className="shop-name">KrishiRatna</span>
                                     <div className="plan-badge">{t('header.trial')}</div>
                                 </div>
                                 <div className="plan-name">{t('header.trial_plan')}</div>
