@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'KrishiRatna - Owner Dashboard',
   description: 'Control center for your shop',
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.ico',
   },
 };
 
